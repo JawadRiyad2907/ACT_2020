@@ -1,0 +1,35 @@
+﻿@using ACT.ViewModel;
+@model Level3ViewModel
+<div class="form-group row">
+
+    <label class="control-label col-md-1" for="SearchLevel1">@Html.DisplayNameFor(x => x.Level1Id)</label>
+    <div class="col-md-3">
+        <select id="SearchLevel1" class="form-control input-sm select2me">
+            <option value="">@Resources.LocalizedText.DropDownnPleaseSelect</option>
+        </select>
+    </div>
+</div>
+
+<div class="form-group row">
+    <label class="control-label col-md-1" for="SearchLevel2">@Html.DisplayNameFor(x => x.Level2Id)</label>
+    <div class="col-md-3">
+        <select id="SearchLevel2" class="form-control input-sm select2me">
+            <option value="">@Resources.LocalizedText.DropDownnPleaseSelect</option>
+        </select>
+    </div>
+</div>
+
+<div class="form-group row">
+    <label class="control-label col-md-1" for="SearchName">@Html.DisplayNameFor(x => x.Name)</label>
+    <div class="col-md-3">
+        <input class="form-control input-sm text-box single-line" id="SearchName" type="text" value="">
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <a id="search-btn" onclick="SearchDataTable();" class="btn  yellow filter-submit margin-bottom  pull-right"><i class="fa fa-search"></i> بحث</a>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,15 @@
+﻿<div class="row">
+    <div class="col-xs-6">
+        <b>@Resources.LocalizedText.UserUnits_Added</b>
+        @Html.DropDownList("UserResponsibleList", (IEnumerable<SelectListItem>)ViewBag.UserAddedList, null, new { @class = "form-control input-sm ", @multiple = "multiple", @size = "9", disabled = "disabled" })
+    </div>
+
+    <div class="col-md-6">
+        <b>@Resources.LocalizedText.UserUnits_Responsable</b>
+        @Html.DropDownList("UserResponsibleList", (IEnumerable<SelectListItem>)ViewBag.RsponsibleUserList, null, new { @class = "form-control input-sm ", @multiple = "multiple", @size = "9", disabled = "disabled" })
+    </div>
+</div>
+
+
+
+

@@ -1,0 +1,78 @@
+﻿@model ACT.ViewModel.UnitUsers.UnitUserViewModel
+@using ACT.Utilities.Enum
+@{
+    bool IsRtl = Resources.LocalizedText.dir == "rtl" ? true : false;
+    var ajaxOptions = new AjaxOptions
+    {
+        OnBegin = "onFormBegin",
+        OnComplete = "onFormComplete",
+        HttpMethod = "POST"
+    };
+
+}
+<div class="portlet blue-hoki box">
+    <div class="portlet-title">
+
+        <div class="caption">
+            <i class="fa fa-cogs"></i>@Model.UnitName
+        </div>
+    </div>
+    <div class="portlet-body form">
+        @using (Ajax.BeginForm(null, null, ajaxOptions, new { enctype = "multipart/form-data" }))
+        {
+            <div class="form-actions top right">
+                <button type="submit" class="btn  green"><i class="fa fa-check"></i> @Resources.LocalizedText.Save</button>
+                <a href="@Url.Action("Index",Model.type==EnterpriseUnitsTypeEnum.Administrative? "AdministrativeUnits": "EducationalUnits", new { Area = "WorkPlanning" })" class="btn default"><i class="fa fa-reply"></i>  @Resources.LocalizedText.Back </a>
+            </div>
+            @Html.HiddenFor(x => x.UnitId)
+            <div class="row">
+                <div class="col-xs-5">
+                    @Html.DropDownListFor(m => m.UserNotAdded, Model.UserNotAddedList, null, new { @class = "form-control input-sm ", @multiple = "multiple", @size = "26" })
+                </div>
+
+
+
+                <div class="col-xs-2">
+
+                    <button type="button" id="UserNotAdded_rightAll" class="btn btn-default btn-block" style="margin-top: 20px;"><i class="glyphicon glyphicon-@(IsRtl?"backward":"forward")"></i></button>
+                    <button type="button" id="UserNotAdded_rightSelected" class="btn btn-default btn-block"><i class="glyphicon glyphicon-chevron-@(IsRtl?"left":"right")"></i></button>
+                    <button type="button" id="UserNotAdded_leftSelected" class="btn btn-default btn-block"><i class="glyphicon glyphicon-chevron-@(IsRtl?"right":"left")"></i></button>
+                    <button type="button" id="UserNotAdded_leftAll" class="btn btn-default btn-block"><i class="glyphicon glyphicon-@(IsRtl?"forward":"backward")"></i></button>
+
+                    <hr style="margin: 40px 0 60px;" />
+
+                    <button type="button" id="UserNotAdded_rightAll_2" class="btn btn-default btn-block"><i class="glyphicon glyphicon-@(IsRtl?"backward":"forward")"></i></button>
+                    <button type="button" id="UserNotAdded_rightSelected_2" class="btn btn-default btn-block"><i class="glyphicon glyphicon-chevron-@(IsRtl?"left":"right")"></i></button>
+                    <button type="button" id="UserNotAdded_leftSelected_2" class="btn btn-default btn-block"><i class="glyphicon glyphicon-chevron-@(IsRtl?"right":"left")"></i></button>
+                    <button type="button" id="UserNotAdded_leftAll_2" class="btn btn-default btn-block"><i class="glyphicon glyphicon-@(IsRtl?"forward":"backward")"></i></button>
+                </div>
+
+                <div class="col-xs-5">
+                    <b>@Resources.LocalizedText.UserUnits_Added</b>
+                    @Html.DropDownListFor(m => m.UserAdded, Model.UserAddedList, null, new { @class = "form-control input-sm ", @multiple = "multiple", @size = "9" })
+                    <br /><hr /><br />
+                    <b>@Resources.LocalizedText.UserUnits_Responsable</b>
+                    @Html.DropDownListFor(m => m.UserResponsible, Model.UserResponsibleList, null, new { @class = "form-control input-sm ", @multiple = "multiple", @size = "9" })
+
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+
+
+
+
+
+@section Scripts{
+    <script src="~/assets/global/plugins/two-side-multi-select/multiselect.min.js"></script>
+    <script>
+        var confirmTitle = "@Resources.LocalizedText.UnitUser_ConfirmTitle";
+        var confirmBtnText = "@Resources.LocalizedText.GeneralOk";
+        var confirmModalText = "@Resources.LocalizedText.UnitUser_ConfirmModalText";
+        var closeText = "@Resources.LocalizedText.GeneralClose";
+        var returnUrl = "@Url.Action("Index",Model.type==EnterpriseUnitsTypeEnum.Administrative? "AdministrativeUnits": "EducationalUnits", new { Area = "WorkPlanning" })";
+    </script>
+    <script src="@Url.Content("~/Scripts/UnitUsers/unit-user.js")"></script>
+}

@@ -1,0 +1,18 @@
+﻿@using ACT.ViewModel;
+@{
+    var Notification = (TempData["Notification"] as NotificationViewModel);
+}
+
+
+
+<script>
+        @if (Notification!=null)
+        {
+            <text>
+             var NotificationTitle = "@Notification.Title";
+            var NotificationDescription = "@Notification.Description";
+            var NotificationType = "@Notification.Type";
+
+            </text>
+        }
+</script>

@@ -1,0 +1,2983 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Level1">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="Published" Type="bit" Nullable="false" />
+          <Property Name="DisplayOrder" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="IsDefault" Type="bit" />
+          <Property Name="DirectResponsible" Type="decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="Level2">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Level1Id" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="DisplayOrder" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Published" Type="bit" />
+          <Property Name="IsDefault" Type="bit" Nullable="false" />
+          <Property Name="DirectResponsible" Type="decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="Level3">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Level1Id" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Level2Id" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="DisplayOrder" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Published" Type="bit" />
+          <Property Name="IsDefault" Type="bit" />
+          <Property Name="DirectResponsible" Type="decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="Level4">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Level1Id" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Level2Id" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Level3Id" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="TypeEducationId" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="TypeId" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="IsKindergarten" Type="bit" Nullable="false" />
+          <Property Name="IsBasic" Type="bit" Nullable="false" />
+          <Property Name="IsMedium" Type="bit" Nullable="false" />
+          <Property Name="IsSecondary" Type="bit" Nullable="false" />
+          <Property Name="IsMinistryEducation" Type="bit" Nullable="false" />
+          <Property Name="IsOtherEducation" Type="bit" Nullable="false" />
+          <Property Name="OtherEducationName" Type="nvarchar" MaxLength="100" />
+          <Property Name="DisplayOrder" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Published" Type="bit" Nullable="false" />
+          <Property Name="IsDefault" Type="bit" />
+          <Property Name="DirectResponsible" Type="decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="CientificDegree">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Language">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="LanguageCulture" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="UniqueSeoCode" Type="nvarchar" MaxLength="2" />
+          <Property Name="FlagImageFileName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Rtl" Type="bit" Nullable="false" />
+          <Property Name="Published" Type="bit" Nullable="false" />
+          <Property Name="DisplayOrder" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Menu">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="DescriptionEn" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="DescriptionAr" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="ResourcesString" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Url" Type="nvarchar" MaxLength="250" />
+          <Property Name="ParentId" Type="int" />
+          <Property Name="CssClass" Type="nvarchar" MaxLength="100" />
+          <Property Name="Order" Type="decimal" Precision="18" Scale="4" />
+          <Property Name="Active" Type="bit" />
+        </EntityType>
+        <EntityType Name="SchoolType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="TypeName" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="SystemSetting">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="Value" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="TypeEducation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="TypeName" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="MenuPrivelags">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MenuId" Type="int" Nullable="false" />
+          <Property Name="JobTitleId" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="CategoryId" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="CretaedBy" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Evidence">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StandardId" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="EvidenceDescription" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="CreatedById" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="LastModifiedById" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="LastModifiedDate" Type="datetime" />
+          <Property Name="DisplayOrder" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Item">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="SectorId" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="ShortName" Type="nvarchar" MaxLength="400" Nullable="false" />
+          <Property Name="Goal" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="ShortGoal" Type="nvarchar" MaxLength="400" Nullable="false" />
+          <Property Name="FixedWeight" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="IntermediateWeight" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="FlexWeight" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="DisplayOrder" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Publish" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ItemNACategory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CategoryId" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="ItemId" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="JobTitle">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Level1Id" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Level2Id" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Level3Id" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Level4Id" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="UserCategoryId" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="JobName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="DisplayOrder" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="Deleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sector">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="ShortName" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="DisplayOrder" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="FixedWeight" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="IntermediateWeight" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="FlexWeight" Type="decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="Standard">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ItemId" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="CategoryId" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="1000" Nullable="false" />
+          <Property Name="Weight" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="CreatedById" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="LastModifiedById" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="LastModifiedDate" Type="datetime" />
+          <Property Name="DisplayOrder" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Publish" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserCategory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Level1Id" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Level2Id" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Level3Id" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Level4Id" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Type" Type="smallint" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="DisplayOrder" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+          <Property Name="IsSystemAdmin" Type="bit" />
+        </EntityType>
+        <EntityType Name="CertificatesAndAward">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Source" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="DateOfCertificate" Type="datetime" Nullable="false" />
+          <Property Name="UserId" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="UpdateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Course">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TrainingCourse" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="institution" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Period" Type="int" Nullable="false" />
+          <Property Name="FromDate" Type="datetime" Nullable="false" />
+          <Property Name="ToDate" Type="datetime" Nullable="false" />
+          <Property Name="UserId" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="UpdateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Qualification">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ScientificDegreeId" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Specialization" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="University" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Year" Type="int" Nullable="false" />
+          <Property Name="UserId" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="UpdateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="UnitUsers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="UnitId" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="IsResponsible" Type="bit" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Level1Id" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Level2Id" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Level3Id" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Level4Id" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="UserCategoryId" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="JobTitleId" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="150" />
+          <Property Name="Password" Type="nvarchar(max)" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+          <Property Name="CreatedBy" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="UpdatedDate" Type="datetime" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SecondName" Type="nvarchar" MaxLength="50" />
+          <Property Name="ThirdName" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PhoneNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="AnotherPhoneNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="GenderId" Type="smallint" Nullable="false" />
+          <Property Name="Address" Type="nvarchar" MaxLength="300" />
+          <Property Name="FirstNameEn" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LastNameEn" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EnterpriseUnits">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Parent" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="EnterpriseUnitsType" Type="smallint" Nullable="false" />
+          <Property Name="Level1Id" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Level2Id" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Level3Id" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Level4Id" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Name" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="DisplayOrder" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="CreatedById" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="UpdateBy" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="UpdateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="SubIndicatorsCategory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TargetCategory" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="CategoryId" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="ItemId" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="StandardId" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="IsContinuous" Type="bit" Nullable="false" />
+          <Property Name="Quantity" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ACT-DB.Level.vw_All_Level' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vw_All_Level">
+          <Key>
+            <PropertyRef Name="LevelId" />
+            <PropertyRef Name="DisplayOrder" />
+            <PropertyRef Name="levelNumber" />
+          </Key>
+          <Property Name="LevelId" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Level1Id" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Level2Id" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Level3Id" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Level4Id" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="LevelName" Type="nvarchar" MaxLength="100" />
+          <Property Name="DisplayOrder" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Published" Type="int" />
+          <Property Name="IsDefault" Type="int" />
+          <Property Name="DirectResponsible" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="levelNumber" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Categories_Level1">
+          <End Role="Level1" Type="Self.Level1" Multiplicity="0..1" />
+          <End Role="UserCategory" Type="Self.UserCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Level1">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserCategory">
+              <PropertyRef Name="Level1Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Categories_Level2">
+          <End Role="Level2" Type="Self.Level2" Multiplicity="0..1" />
+          <End Role="UserCategory" Type="Self.UserCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Level2">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserCategory">
+              <PropertyRef Name="Level2Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Categories_Level3">
+          <End Role="Level3" Type="Self.Level3" Multiplicity="0..1" />
+          <End Role="UserCategory" Type="Self.UserCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Level3">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserCategory">
+              <PropertyRef Name="Level3Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Categories_Level4">
+          <End Role="Level4" Type="Self.Level4" Multiplicity="0..1" />
+          <End Role="UserCategory" Type="Self.UserCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Level4">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserCategory">
+              <PropertyRef Name="Level4Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CertificatesAndAward_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="CertificatesAndAward" Type="Self.CertificatesAndAward" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CertificatesAndAward">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Course_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Course" Type="Self.Course" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Course">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EnterpriseUnits_EnterpriseUnits">
+          <End Role="EnterpriseUnits" Type="Self.EnterpriseUnits" Multiplicity="0..1" />
+          <End Role="EnterpriseUnits1" Type="Self.EnterpriseUnits" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EnterpriseUnits">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EnterpriseUnits1">
+              <PropertyRef Name="Parent" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EnterpriseUnits_EnterpriseUnits1">
+          <End Role="EnterpriseUnits" Type="Self.EnterpriseUnits" Multiplicity="1" />
+          <End Role="EnterpriseUnits1" Type="Self.EnterpriseUnits" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="EnterpriseUnits">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EnterpriseUnits1">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EnterpriseUnits_Level1">
+          <End Role="Level1" Type="Self.Level1" Multiplicity="0..1" />
+          <End Role="EnterpriseUnits" Type="Self.EnterpriseUnits" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Level1">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EnterpriseUnits">
+              <PropertyRef Name="Level1Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EnterpriseUnits_Level2">
+          <End Role="Level2" Type="Self.Level2" Multiplicity="0..1" />
+          <End Role="EnterpriseUnits" Type="Self.EnterpriseUnits" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Level2">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EnterpriseUnits">
+              <PropertyRef Name="Level2Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EnterpriseUnits_Level3">
+          <End Role="Level3" Type="Self.Level3" Multiplicity="0..1" />
+          <End Role="EnterpriseUnits" Type="Self.EnterpriseUnits" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Level3">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EnterpriseUnits">
+              <PropertyRef Name="Level3Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EnterpriseUnits_Level4">
+          <End Role="Level4" Type="Self.Level4" Multiplicity="0..1" />
+          <End Role="EnterpriseUnits" Type="Self.EnterpriseUnits" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Level4">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EnterpriseUnits">
+              <PropertyRef Name="Level4Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Evidence_Standard">
+          <End Role="Standard" Type="Self.Standard" Multiplicity="1" />
+          <End Role="Evidence" Type="Self.Evidence" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Standard">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Evidence">
+              <PropertyRef Name="StandardId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Item_Sector">
+          <End Role="Sector" Type="Self.Sector" Multiplicity="1" />
+          <End Role="Item" Type="Self.Item" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sector">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Item">
+              <PropertyRef Name="SectorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ItemNACategory_Item">
+          <End Role="Item" Type="Self.Item" Multiplicity="1" />
+          <End Role="ItemNACategory" Type="Self.ItemNACategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Item">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ItemNACategory">
+              <PropertyRef Name="ItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ItemNACategory_UserCategory">
+          <End Role="UserCategory" Type="Self.UserCategory" Multiplicity="1" />
+          <End Role="ItemNACategory" Type="Self.ItemNACategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserCategory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ItemNACategory">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_JobTitle_Level1">
+          <End Role="Level1" Type="Self.Level1" Multiplicity="0..1" />
+          <End Role="JobTitle" Type="Self.JobTitle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Level1">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="JobTitle">
+              <PropertyRef Name="Level1Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_JobTitle_Level2">
+          <End Role="Level2" Type="Self.Level2" Multiplicity="0..1" />
+          <End Role="JobTitle" Type="Self.JobTitle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Level2">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="JobTitle">
+              <PropertyRef Name="Level2Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_JobTitle_Level3">
+          <End Role="Level3" Type="Self.Level3" Multiplicity="0..1" />
+          <End Role="JobTitle" Type="Self.JobTitle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Level3">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="JobTitle">
+              <PropertyRef Name="Level3Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_JobTitle_Level4">
+          <End Role="Level4" Type="Self.Level4" Multiplicity="0..1" />
+          <End Role="JobTitle" Type="Self.JobTitle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Level4">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="JobTitle">
+              <PropertyRef Name="Level4Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_JobTitle_UserCategory">
+          <End Role="UserCategory" Type="Self.UserCategory" Multiplicity="1" />
+          <End Role="JobTitle" Type="Self.JobTitle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserCategory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="JobTitle">
+              <PropertyRef Name="UserCategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Level1_User">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Level1" Type="Self.Level1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Level1">
+              <PropertyRef Name="DirectResponsible" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Level2_Level1">
+          <End Role="Level1" Type="Self.Level1" Multiplicity="1" />
+          <End Role="Level2" Type="Self.Level2" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Level1">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Level2">
+              <PropertyRef Name="Level1Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Level2_User">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Level2" Type="Self.Level2" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Level2">
+              <PropertyRef Name="DirectResponsible" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Level3_Level1">
+          <End Role="Level1" Type="Self.Level1" Multiplicity="1" />
+          <End Role="Level3" Type="Self.Level3" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Level1">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Level3">
+              <PropertyRef Name="Level1Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Level3_Level2">
+          <End Role="Level2" Type="Self.Level2" Multiplicity="1" />
+          <End Role="Level3" Type="Self.Level3" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Level2">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Level3">
+              <PropertyRef Name="Level2Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Level3_User">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Level3" Type="Self.Level3" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Level3">
+              <PropertyRef Name="DirectResponsible" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Level4_Level1">
+          <End Role="Level1" Type="Self.Level1" Multiplicity="1" />
+          <End Role="Level4" Type="Self.Level4" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Level1">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Level4">
+              <PropertyRef Name="Level1Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Level4_Level2">
+          <End Role="Level2" Type="Self.Level2" Multiplicity="1" />
+          <End Role="Level4" Type="Self.Level4" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Level2">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Level4">
+              <PropertyRef Name="Level2Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Level4_Level3">
+          <End Role="Level3" Type="Self.Level3" Multiplicity="1" />
+          <End Role="Level4" Type="Self.Level4" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Level3">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Level4">
+              <PropertyRef Name="Level3Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Level4_SchoolType">
+          <End Role="SchoolType" Type="Self.SchoolType" Multiplicity="1" />
+          <End Role="Level4" Type="Self.Level4" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SchoolType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Level4">
+              <PropertyRef Name="TypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Level4_TypeEducation">
+          <End Role="TypeEducation" Type="Self.TypeEducation" Multiplicity="1" />
+          <End Role="Level4" Type="Self.Level4" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeEducation">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Level4">
+              <PropertyRef Name="TypeEducationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Level4_User">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Level4" Type="Self.Level4" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Level4">
+              <PropertyRef Name="DirectResponsible" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Menu_Menu1">
+          <End Role="Menu" Type="Self.Menu" Multiplicity="0..1" />
+          <End Role="Menu1" Type="Self.Menu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Menu">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Menu1">
+              <PropertyRef Name="ParentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MenuPrivelags_Menu">
+          <End Role="Menu" Type="Self.Menu" Multiplicity="1" />
+          <End Role="MenuPrivelags" Type="Self.MenuPrivelags" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Menu">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MenuPrivelags">
+              <PropertyRef Name="MenuId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MenuPrivelags_MenuPrivelags">
+          <End Role="JobTitle" Type="Self.JobTitle" Multiplicity="0..1" />
+          <End Role="MenuPrivelags" Type="Self.MenuPrivelags" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="JobTitle">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MenuPrivelags">
+              <PropertyRef Name="JobTitleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MenuPrivelags_UserCategory">
+          <End Role="UserCategory" Type="Self.UserCategory" Multiplicity="0..1" />
+          <End Role="MenuPrivelags" Type="Self.MenuPrivelags" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserCategory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MenuPrivelags">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Qualification_CientificDegree">
+          <End Role="CientificDegree" Type="Self.CientificDegree" Multiplicity="1" />
+          <End Role="Qualification" Type="Self.Qualification" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CientificDegree">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Qualification">
+              <PropertyRef Name="ScientificDegreeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Qualification_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Qualification" Type="Self.Qualification" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Qualification">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Standard_Item">
+          <End Role="Item" Type="Self.Item" Multiplicity="1" />
+          <End Role="Standard" Type="Self.Standard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Item">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Standard">
+              <PropertyRef Name="ItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Standard_UserCategory">
+          <End Role="UserCategory" Type="Self.UserCategory" Multiplicity="1" />
+          <End Role="Standard" Type="Self.Standard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserCategory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Standard">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SubIndicatorsCategory_Item">
+          <End Role="Item" Type="Self.Item" Multiplicity="1" />
+          <End Role="SubIndicatorsCategory" Type="Self.SubIndicatorsCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Item">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SubIndicatorsCategory">
+              <PropertyRef Name="ItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SubIndicatorsCategory_Standard">
+          <End Role="Standard" Type="Self.Standard" Multiplicity="1" />
+          <End Role="SubIndicatorsCategory" Type="Self.SubIndicatorsCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Standard">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SubIndicatorsCategory">
+              <PropertyRef Name="StandardId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SubIndicatorsCategory_UserCategory">
+          <End Role="UserCategory" Type="Self.UserCategory" Multiplicity="1" />
+          <End Role="SubIndicatorsCategory" Type="Self.SubIndicatorsCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserCategory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SubIndicatorsCategory">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SubIndicatorsCategory_UserCategory1">
+          <End Role="UserCategory" Type="Self.UserCategory" Multiplicity="1" />
+          <End Role="SubIndicatorsCategory" Type="Self.SubIndicatorsCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserCategory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SubIndicatorsCategory">
+              <PropertyRef Name="TargetCategory" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UnitUsers_EnterpriseUnits">
+          <End Role="EnterpriseUnits" Type="Self.EnterpriseUnits" Multiplicity="1" />
+          <End Role="UnitUsers" Type="Self.UnitUsers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EnterpriseUnits">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UnitUsers">
+              <PropertyRef Name="UnitId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UnitUsers_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="UnitUsers" Type="Self.UnitUsers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UnitUsers">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_JobTitle">
+          <End Role="JobTitle" Type="Self.JobTitle" Multiplicity="1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="JobTitle">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="JobTitleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Level1">
+          <End Role="Level1" Type="Self.Level1" Multiplicity="0..1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Level1">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="Level1Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Level2">
+          <End Role="Level2" Type="Self.Level2" Multiplicity="0..1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Level2">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="Level2Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Level3">
+          <End Role="Level3" Type="Self.Level3" Multiplicity="0..1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Level3">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="Level3Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Level4">
+          <End Role="Level4" Type="Self.Level4" Multiplicity="0..1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Level4">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="Level4Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_UserCategory">
+          <End Role="UserCategory" Type="Self.UserCategory" Multiplicity="1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserCategory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="UserCategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="Level1" EntityType="Self.Level1" Schema="Level" store:Type="Tables" />
+          <EntitySet Name="Level2" EntityType="Self.Level2" Schema="Level" store:Type="Tables" />
+          <EntitySet Name="Level3" EntityType="Self.Level3" Schema="Level" store:Type="Tables" />
+          <EntitySet Name="Level4" EntityType="Self.Level4" Schema="Level" store:Type="Tables" />
+          <EntitySet Name="CientificDegree" EntityType="Self.CientificDegree" Schema="Lookup" store:Type="Tables" />
+          <EntitySet Name="Language" EntityType="Self.Language" Schema="Lookup" store:Type="Tables" />
+          <EntitySet Name="Menu" EntityType="Self.Menu" Schema="Lookup" store:Type="Tables" />
+          <EntitySet Name="SchoolType" EntityType="Self.SchoolType" Schema="Lookup" store:Type="Tables" />
+          <EntitySet Name="SystemSetting" EntityType="Self.SystemSetting" Schema="Lookup" store:Type="Tables" />
+          <EntitySet Name="TypeEducation" EntityType="Self.TypeEducation" Schema="Lookup" store:Type="Tables" />
+          <EntitySet Name="MenuPrivelags" EntityType="Self.MenuPrivelags" Schema="Privelags" store:Type="Tables" />
+          <EntitySet Name="Evidence" EntityType="Self.Evidence" Schema="SystemManagment" store:Type="Tables" />
+          <EntitySet Name="Item" EntityType="Self.Item" Schema="SystemManagment" store:Type="Tables" />
+          <EntitySet Name="ItemNACategory" EntityType="Self.ItemNACategory" Schema="SystemManagment" store:Type="Tables" />
+          <EntitySet Name="JobTitle" EntityType="Self.JobTitle" Schema="SystemManagment" store:Type="Tables" />
+          <EntitySet Name="Sector" EntityType="Self.Sector" Schema="SystemManagment" store:Type="Tables" />
+          <EntitySet Name="Standard" EntityType="Self.Standard" Schema="SystemManagment" store:Type="Tables" />
+          <EntitySet Name="UserCategory" EntityType="Self.UserCategory" Schema="SystemManagment" store:Type="Tables" />
+          <EntitySet Name="CertificatesAndAward" EntityType="Self.CertificatesAndAward" Schema="User" store:Type="Tables" />
+          <EntitySet Name="Course" EntityType="Self.Course" Schema="User" store:Type="Tables" />
+          <EntitySet Name="Qualification" EntityType="Self.Qualification" Schema="User" store:Type="Tables" />
+          <EntitySet Name="UnitUsers" EntityType="Self.UnitUsers" Schema="User" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="User" store:Type="Tables" />
+          <EntitySet Name="EnterpriseUnits" EntityType="Self.EnterpriseUnits" Schema="WorkPlanning" store:Type="Tables" />
+          <EntitySet Name="SubIndicatorsCategory" EntityType="Self.SubIndicatorsCategory" Schema="WorkPlanning" store:Type="Tables" />
+          <EntitySet Name="vw_All_Level" EntityType="Self.vw_All_Level" store:Type="Views" store:Schema="Level">
+            <DefiningQuery>SELECT 
+    [vw_All_Level].[LevelId] AS [LevelId], 
+    [vw_All_Level].[Level1Id] AS [Level1Id], 
+    [vw_All_Level].[Level2Id] AS [Level2Id], 
+    [vw_All_Level].[Level3Id] AS [Level3Id], 
+    [vw_All_Level].[Level4Id] AS [Level4Id], 
+    [vw_All_Level].[LevelName] AS [LevelName], 
+    [vw_All_Level].[DisplayOrder] AS [DisplayOrder], 
+    [vw_All_Level].[Published] AS [Published], 
+    [vw_All_Level].[IsDefault] AS [IsDefault], 
+    [vw_All_Level].[DirectResponsible] AS [DirectResponsible], 
+    [vw_All_Level].[levelNumber] AS [levelNumber]
+    FROM [Level].[vw_All_Level] AS [vw_All_Level]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_Categories_Level1" Association="Self.FK_Categories_Level1">
+            <End Role="Level1" EntitySet="Level1" />
+            <End Role="UserCategory" EntitySet="UserCategory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Categories_Level2" Association="Self.FK_Categories_Level2">
+            <End Role="Level2" EntitySet="Level2" />
+            <End Role="UserCategory" EntitySet="UserCategory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Categories_Level3" Association="Self.FK_Categories_Level3">
+            <End Role="Level3" EntitySet="Level3" />
+            <End Role="UserCategory" EntitySet="UserCategory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Categories_Level4" Association="Self.FK_Categories_Level4">
+            <End Role="Level4" EntitySet="Level4" />
+            <End Role="UserCategory" EntitySet="UserCategory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CertificatesAndAward_User" Association="Self.FK_CertificatesAndAward_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="CertificatesAndAward" EntitySet="CertificatesAndAward" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Course_User" Association="Self.FK_Course_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Course" EntitySet="Course" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EnterpriseUnits_EnterpriseUnits" Association="Self.FK_EnterpriseUnits_EnterpriseUnits">
+            <End Role="EnterpriseUnits" EntitySet="EnterpriseUnits" />
+            <End Role="EnterpriseUnits1" EntitySet="EnterpriseUnits" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EnterpriseUnits_EnterpriseUnits1" Association="Self.FK_EnterpriseUnits_EnterpriseUnits1">
+            <End Role="EnterpriseUnits" EntitySet="EnterpriseUnits" />
+            <End Role="EnterpriseUnits1" EntitySet="EnterpriseUnits" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EnterpriseUnits_Level1" Association="Self.FK_EnterpriseUnits_Level1">
+            <End Role="Level1" EntitySet="Level1" />
+            <End Role="EnterpriseUnits" EntitySet="EnterpriseUnits" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EnterpriseUnits_Level2" Association="Self.FK_EnterpriseUnits_Level2">
+            <End Role="Level2" EntitySet="Level2" />
+            <End Role="EnterpriseUnits" EntitySet="EnterpriseUnits" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EnterpriseUnits_Level3" Association="Self.FK_EnterpriseUnits_Level3">
+            <End Role="Level3" EntitySet="Level3" />
+            <End Role="EnterpriseUnits" EntitySet="EnterpriseUnits" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EnterpriseUnits_Level4" Association="Self.FK_EnterpriseUnits_Level4">
+            <End Role="Level4" EntitySet="Level4" />
+            <End Role="EnterpriseUnits" EntitySet="EnterpriseUnits" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Evidence_Standard" Association="Self.FK_Evidence_Standard">
+            <End Role="Standard" EntitySet="Standard" />
+            <End Role="Evidence" EntitySet="Evidence" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Item_Sector" Association="Self.FK_Item_Sector">
+            <End Role="Sector" EntitySet="Sector" />
+            <End Role="Item" EntitySet="Item" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ItemNACategory_Item" Association="Self.FK_ItemNACategory_Item">
+            <End Role="Item" EntitySet="Item" />
+            <End Role="ItemNACategory" EntitySet="ItemNACategory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ItemNACategory_UserCategory" Association="Self.FK_ItemNACategory_UserCategory">
+            <End Role="UserCategory" EntitySet="UserCategory" />
+            <End Role="ItemNACategory" EntitySet="ItemNACategory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_JobTitle_Level1" Association="Self.FK_JobTitle_Level1">
+            <End Role="Level1" EntitySet="Level1" />
+            <End Role="JobTitle" EntitySet="JobTitle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_JobTitle_Level2" Association="Self.FK_JobTitle_Level2">
+            <End Role="Level2" EntitySet="Level2" />
+            <End Role="JobTitle" EntitySet="JobTitle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_JobTitle_Level3" Association="Self.FK_JobTitle_Level3">
+            <End Role="Level3" EntitySet="Level3" />
+            <End Role="JobTitle" EntitySet="JobTitle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_JobTitle_Level4" Association="Self.FK_JobTitle_Level4">
+            <End Role="Level4" EntitySet="Level4" />
+            <End Role="JobTitle" EntitySet="JobTitle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_JobTitle_UserCategory" Association="Self.FK_JobTitle_UserCategory">
+            <End Role="UserCategory" EntitySet="UserCategory" />
+            <End Role="JobTitle" EntitySet="JobTitle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Level1_User" Association="Self.FK_Level1_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Level1" EntitySet="Level1" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Level2_Level1" Association="Self.FK_Level2_Level1">
+            <End Role="Level1" EntitySet="Level1" />
+            <End Role="Level2" EntitySet="Level2" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Level2_User" Association="Self.FK_Level2_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Level2" EntitySet="Level2" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Level3_Level1" Association="Self.FK_Level3_Level1">
+            <End Role="Level1" EntitySet="Level1" />
+            <End Role="Level3" EntitySet="Level3" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Level3_Level2" Association="Self.FK_Level3_Level2">
+            <End Role="Level2" EntitySet="Level2" />
+            <End Role="Level3" EntitySet="Level3" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Level3_User" Association="Self.FK_Level3_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Level3" EntitySet="Level3" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Level4_Level1" Association="Self.FK_Level4_Level1">
+            <End Role="Level1" EntitySet="Level1" />
+            <End Role="Level4" EntitySet="Level4" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Level4_Level2" Association="Self.FK_Level4_Level2">
+            <End Role="Level2" EntitySet="Level2" />
+            <End Role="Level4" EntitySet="Level4" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Level4_Level3" Association="Self.FK_Level4_Level3">
+            <End Role="Level3" EntitySet="Level3" />
+            <End Role="Level4" EntitySet="Level4" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Level4_SchoolType" Association="Self.FK_Level4_SchoolType">
+            <End Role="SchoolType" EntitySet="SchoolType" />
+            <End Role="Level4" EntitySet="Level4" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Level4_TypeEducation" Association="Self.FK_Level4_TypeEducation">
+            <End Role="TypeEducation" EntitySet="TypeEducation" />
+            <End Role="Level4" EntitySet="Level4" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Level4_User" Association="Self.FK_Level4_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Level4" EntitySet="Level4" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Menu_Menu1" Association="Self.FK_Menu_Menu1">
+            <End Role="Menu" EntitySet="Menu" />
+            <End Role="Menu1" EntitySet="Menu" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MenuPrivelags_Menu" Association="Self.FK_MenuPrivelags_Menu">
+            <End Role="Menu" EntitySet="Menu" />
+            <End Role="MenuPrivelags" EntitySet="MenuPrivelags" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MenuPrivelags_MenuPrivelags" Association="Self.FK_MenuPrivelags_MenuPrivelags">
+            <End Role="JobTitle" EntitySet="JobTitle" />
+            <End Role="MenuPrivelags" EntitySet="MenuPrivelags" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MenuPrivelags_UserCategory" Association="Self.FK_MenuPrivelags_UserCategory">
+            <End Role="UserCategory" EntitySet="UserCategory" />
+            <End Role="MenuPrivelags" EntitySet="MenuPrivelags" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Qualification_CientificDegree" Association="Self.FK_Qualification_CientificDegree">
+            <End Role="CientificDegree" EntitySet="CientificDegree" />
+            <End Role="Qualification" EntitySet="Qualification" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Qualification_User" Association="Self.FK_Qualification_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Qualification" EntitySet="Qualification" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Standard_Item" Association="Self.FK_Standard_Item">
+            <End Role="Item" EntitySet="Item" />
+            <End Role="Standard" EntitySet="Standard" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Standard_UserCategory" Association="Self.FK_Standard_UserCategory">
+            <End Role="UserCategory" EntitySet="UserCategory" />
+            <End Role="Standard" EntitySet="Standard" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SubIndicatorsCategory_Item" Association="Self.FK_SubIndicatorsCategory_Item">
+            <End Role="Item" EntitySet="Item" />
+            <End Role="SubIndicatorsCategory" EntitySet="SubIndicatorsCategory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SubIndicatorsCategory_Standard" Association="Self.FK_SubIndicatorsCategory_Standard">
+            <End Role="Standard" EntitySet="Standard" />
+            <End Role="SubIndicatorsCategory" EntitySet="SubIndicatorsCategory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SubIndicatorsCategory_UserCategory" Association="Self.FK_SubIndicatorsCategory_UserCategory">
+            <End Role="UserCategory" EntitySet="UserCategory" />
+            <End Role="SubIndicatorsCategory" EntitySet="SubIndicatorsCategory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SubIndicatorsCategory_UserCategory1" Association="Self.FK_SubIndicatorsCategory_UserCategory1">
+            <End Role="UserCategory" EntitySet="UserCategory" />
+            <End Role="SubIndicatorsCategory" EntitySet="SubIndicatorsCategory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UnitUsers_EnterpriseUnits" Association="Self.FK_UnitUsers_EnterpriseUnits">
+            <End Role="EnterpriseUnits" EntitySet="EnterpriseUnits" />
+            <End Role="UnitUsers" EntitySet="UnitUsers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UnitUsers_User" Association="Self.FK_UnitUsers_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="UnitUsers" EntitySet="UnitUsers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_JobTitle" Association="Self.FK_User_JobTitle">
+            <End Role="JobTitle" EntitySet="JobTitle" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Level1" Association="Self.FK_User_Level1">
+            <End Role="Level1" EntitySet="Level1" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Level2" Association="Self.FK_User_Level2">
+            <End Role="Level2" EntitySet="Level2" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Level3" Association="Self.FK_User_Level3">
+            <End Role="Level3" EntitySet="Level3" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Level4" Association="Self.FK_User_Level4">
+            <End Role="Level4" EntitySet="Level4" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_UserCategory" Association="Self.FK_User_UserCategory">
+            <End Role="UserCategory" EntitySet="UserCategory" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="ActEntities" annotation:LazyLoadingEnabled="false">
+          <EntitySet Name="Level1" EntityType="Model.Level1" />
+          <EntitySet Name="Level2" EntityType="Model.Level2" />
+          <EntitySet Name="Level3" EntityType="Model.Level3" />
+          <EntitySet Name="Level4" EntityType="Model.Level4" />
+          <EntitySet Name="CientificDegrees" EntityType="Model.CientificDegree" />
+          <EntitySet Name="Languages" EntityType="Model.Language" />
+          <EntitySet Name="Menus" EntityType="Model.Menu" />
+          <EntitySet Name="SchoolTypes" EntityType="Model.SchoolType" />
+          <EntitySet Name="SystemSettings" EntityType="Model.SystemSetting" />
+          <EntitySet Name="TypeEducations" EntityType="Model.TypeEducation" />
+          <EntitySet Name="MenuPrivelags" EntityType="Model.MenuPrivelag" />
+          <EntitySet Name="Evidences" EntityType="Model.Evidence" />
+          <EntitySet Name="Items" EntityType="Model.Item" />
+          <EntitySet Name="ItemNACategories" EntityType="Model.ItemNACategory" />
+          <EntitySet Name="JobTitles" EntityType="Model.JobTitle" />
+          <EntitySet Name="Sectors" EntityType="Model.Sector" />
+          <EntitySet Name="Standards" EntityType="Model.Standard" />
+          <EntitySet Name="UserCategories" EntityType="Model.UserCategory" />
+          <EntitySet Name="CertificatesAndAwards" EntityType="Model.CertificatesAndAward" />
+          <EntitySet Name="Courses" EntityType="Model.Course" />
+          <EntitySet Name="Qualifications" EntityType="Model.Qualification" />
+          <EntitySet Name="UnitUsers" EntityType="Model.UnitUser" />
+          <EntitySet Name="Users" EntityType="Model.User" />
+          <EntitySet Name="EnterpriseUnits" EntityType="Model.EnterpriseUnit" />
+          <EntitySet Name="SubIndicatorsCategories" EntityType="Model.SubIndicatorsCategory" />
+          <EntitySet Name="vw_All_Level" EntityType="Model.vw_All_Level" />
+          <AssociationSet Name="FK_Categories_Level1" Association="Model.FK_Categories_Level1">
+            <End Role="Level1" EntitySet="Level1" />
+            <End Role="UserCategory" EntitySet="UserCategories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EnterpriseUnits_Level1" Association="Model.FK_EnterpriseUnits_Level1">
+            <End Role="Level1" EntitySet="Level1" />
+            <End Role="EnterpriseUnit" EntitySet="EnterpriseUnits" />
+          </AssociationSet>
+          <AssociationSet Name="FK_JobTitle_Level1" Association="Model.FK_JobTitle_Level1">
+            <End Role="Level1" EntitySet="Level1" />
+            <End Role="JobTitle" EntitySet="JobTitles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Level1_User" Association="Model.FK_Level1_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Level1" EntitySet="Level1" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Level2_Level1" Association="Model.FK_Level2_Level1">
+            <End Role="Level1" EntitySet="Level1" />
+            <End Role="Level2" EntitySet="Level2" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Level3_Level1" Association="Model.FK_Level3_Level1">
+            <End Role="Level1" EntitySet="Level1" />
+            <End Role="Level3" EntitySet="Level3" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Level4_Level1" Association="Model.FK_Level4_Level1">
+            <End Role="Level1" EntitySet="Level1" />
+            <End Role="Level4" EntitySet="Level4" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Level1" Association="Model.FK_User_Level1">
+            <End Role="Level1" EntitySet="Level1" />
+            <End Role="User" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Categories_Level2" Association="Model.FK_Categories_Level2">
+            <End Role="Level2" EntitySet="Level2" />
+            <End Role="UserCategory" EntitySet="UserCategories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EnterpriseUnits_Level2" Association="Model.FK_EnterpriseUnits_Level2">
+            <End Role="Level2" EntitySet="Level2" />
+            <End Role="EnterpriseUnit" EntitySet="EnterpriseUnits" />
+          </AssociationSet>
+          <AssociationSet Name="FK_JobTitle_Level2" Association="Model.FK_JobTitle_Level2">
+            <End Role="Level2" EntitySet="Level2" />
+            <End Role="JobTitle" EntitySet="JobTitles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Level2_User" Association="Model.FK_Level2_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Level2" EntitySet="Level2" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Level3_Level2" Association="Model.FK_Level3_Level2">
+            <End Role="Level2" EntitySet="Level2" />
+            <End Role="Level3" EntitySet="Level3" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Level4_Level2" Association="Model.FK_Level4_Level2">
+            <End Role="Level2" EntitySet="Level2" />
+            <End Role="Level4" EntitySet="Level4" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Level2" Association="Model.FK_User_Level2">
+            <End Role="Level2" EntitySet="Level2" />
+            <End Role="User" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Categories_Level3" Association="Model.FK_Categories_Level3">
+            <End Role="Level3" EntitySet="Level3" />
+            <End Role="UserCategory" EntitySet="UserCategories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EnterpriseUnits_Level3" Association="Model.FK_EnterpriseUnits_Level3">
+            <End Role="Level3" EntitySet="Level3" />
+            <End Role="EnterpriseUnit" EntitySet="EnterpriseUnits" />
+          </AssociationSet>
+          <AssociationSet Name="FK_JobTitle_Level3" Association="Model.FK_JobTitle_Level3">
+            <End Role="Level3" EntitySet="Level3" />
+            <End Role="JobTitle" EntitySet="JobTitles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Level3_User" Association="Model.FK_Level3_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Level3" EntitySet="Level3" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Level4_Level3" Association="Model.FK_Level4_Level3">
+            <End Role="Level3" EntitySet="Level3" />
+            <End Role="Level4" EntitySet="Level4" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Level3" Association="Model.FK_User_Level3">
+            <End Role="Level3" EntitySet="Level3" />
+            <End Role="User" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Categories_Level4" Association="Model.FK_Categories_Level4">
+            <End Role="Level4" EntitySet="Level4" />
+            <End Role="UserCategory" EntitySet="UserCategories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EnterpriseUnits_Level4" Association="Model.FK_EnterpriseUnits_Level4">
+            <End Role="Level4" EntitySet="Level4" />
+            <End Role="EnterpriseUnit" EntitySet="EnterpriseUnits" />
+          </AssociationSet>
+          <AssociationSet Name="FK_JobTitle_Level4" Association="Model.FK_JobTitle_Level4">
+            <End Role="Level4" EntitySet="Level4" />
+            <End Role="JobTitle" EntitySet="JobTitles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Level4_SchoolType" Association="Model.FK_Level4_SchoolType">
+            <End Role="SchoolType" EntitySet="SchoolTypes" />
+            <End Role="Level4" EntitySet="Level4" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Level4_TypeEducation" Association="Model.FK_Level4_TypeEducation">
+            <End Role="TypeEducation" EntitySet="TypeEducations" />
+            <End Role="Level4" EntitySet="Level4" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Level4_User" Association="Model.FK_Level4_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Level4" EntitySet="Level4" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Level4" Association="Model.FK_User_Level4">
+            <End Role="Level4" EntitySet="Level4" />
+            <End Role="User" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Qualification_CientificDegree" Association="Model.FK_Qualification_CientificDegree">
+            <End Role="CientificDegree" EntitySet="CientificDegrees" />
+            <End Role="Qualification" EntitySet="Qualifications" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Menu_Menu1" Association="Model.FK_Menu_Menu1">
+            <End Role="Menu" EntitySet="Menus" />
+            <End Role="Menu1" EntitySet="Menus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MenuPrivelags_Menu" Association="Model.FK_MenuPrivelags_Menu">
+            <End Role="Menu" EntitySet="Menus" />
+            <End Role="MenuPrivelag" EntitySet="MenuPrivelags" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MenuPrivelags_MenuPrivelags" Association="Model.FK_MenuPrivelags_MenuPrivelags">
+            <End Role="JobTitle" EntitySet="JobTitles" />
+            <End Role="MenuPrivelag" EntitySet="MenuPrivelags" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MenuPrivelags_UserCategory" Association="Model.FK_MenuPrivelags_UserCategory">
+            <End Role="UserCategory" EntitySet="UserCategories" />
+            <End Role="MenuPrivelag" EntitySet="MenuPrivelags" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Evidence_Standard" Association="Model.FK_Evidence_Standard">
+            <End Role="Standard" EntitySet="Standards" />
+            <End Role="Evidence" EntitySet="Evidences" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Item_Sector" Association="Model.FK_Item_Sector">
+            <End Role="Sector" EntitySet="Sectors" />
+            <End Role="Item" EntitySet="Items" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ItemNACategory_Item" Association="Model.FK_ItemNACategory_Item">
+            <End Role="Item" EntitySet="Items" />
+            <End Role="ItemNACategory" EntitySet="ItemNACategories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Standard_Item" Association="Model.FK_Standard_Item">
+            <End Role="Item" EntitySet="Items" />
+            <End Role="Standard" EntitySet="Standards" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SubIndicatorsCategory_Item" Association="Model.FK_SubIndicatorsCategory_Item">
+            <End Role="Item" EntitySet="Items" />
+            <End Role="SubIndicatorsCategory" EntitySet="SubIndicatorsCategories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ItemNACategory_UserCategory" Association="Model.FK_ItemNACategory_UserCategory">
+            <End Role="UserCategory" EntitySet="UserCategories" />
+            <End Role="ItemNACategory" EntitySet="ItemNACategories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_JobTitle_UserCategory" Association="Model.FK_JobTitle_UserCategory">
+            <End Role="UserCategory" EntitySet="UserCategories" />
+            <End Role="JobTitle" EntitySet="JobTitles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_JobTitle" Association="Model.FK_User_JobTitle">
+            <End Role="JobTitle" EntitySet="JobTitles" />
+            <End Role="User" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Standard_UserCategory" Association="Model.FK_Standard_UserCategory">
+            <End Role="UserCategory" EntitySet="UserCategories" />
+            <End Role="Standard" EntitySet="Standards" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SubIndicatorsCategory_Standard" Association="Model.FK_SubIndicatorsCategory_Standard">
+            <End Role="Standard" EntitySet="Standards" />
+            <End Role="SubIndicatorsCategory" EntitySet="SubIndicatorsCategories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SubIndicatorsCategory_UserCategory" Association="Model.FK_SubIndicatorsCategory_UserCategory">
+            <End Role="UserCategory" EntitySet="UserCategories" />
+            <End Role="SubIndicatorsCategory" EntitySet="SubIndicatorsCategories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SubIndicatorsCategory_UserCategory1" Association="Model.FK_SubIndicatorsCategory_UserCategory1">
+            <End Role="UserCategory" EntitySet="UserCategories" />
+            <End Role="SubIndicatorsCategory" EntitySet="SubIndicatorsCategories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_UserCategory" Association="Model.FK_User_UserCategory">
+            <End Role="UserCategory" EntitySet="UserCategories" />
+            <End Role="User" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CertificatesAndAward_User" Association="Model.FK_CertificatesAndAward_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="CertificatesAndAward" EntitySet="CertificatesAndAwards" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Course_User" Association="Model.FK_Course_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Course" EntitySet="Courses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Qualification_User" Association="Model.FK_Qualification_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Qualification" EntitySet="Qualifications" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UnitUsers_EnterpriseUnits" Association="Model.FK_UnitUsers_EnterpriseUnits">
+            <End Role="EnterpriseUnit" EntitySet="EnterpriseUnits" />
+            <End Role="UnitUser" EntitySet="UnitUsers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UnitUsers_User" Association="Model.FK_UnitUsers_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="UnitUser" EntitySet="UnitUsers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EnterpriseUnits_EnterpriseUnits" Association="Model.FK_EnterpriseUnits_EnterpriseUnits">
+            <End Role="EnterpriseUnit" EntitySet="EnterpriseUnits" />
+            <End Role="EnterpriseUnit1" EntitySet="EnterpriseUnits" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EnterpriseUnits_EnterpriseUnits1" Association="Model.FK_EnterpriseUnits_EnterpriseUnits1">
+            <End Role="EnterpriseUnit" EntitySet="EnterpriseUnits" />
+            <End Role="EnterpriseUnit1" EntitySet="EnterpriseUnits" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Level1">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Published" Type="Boolean" Nullable="false" />
+          <Property Name="DisplayOrder" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="IsDefault" Type="Boolean" />
+          <Property Name="DirectResponsible" Type="Decimal" Precision="18" Scale="0" />
+          <NavigationProperty Name="UserCategories" Relationship="Model.FK_Categories_Level1" FromRole="Level1" ToRole="UserCategory" />
+          <NavigationProperty Name="EnterpriseUnits" Relationship="Model.FK_EnterpriseUnits_Level1" FromRole="Level1" ToRole="EnterpriseUnit" />
+          <NavigationProperty Name="JobTitles" Relationship="Model.FK_JobTitle_Level1" FromRole="Level1" ToRole="JobTitle" />
+          <NavigationProperty Name="User" Relationship="Model.FK_Level1_User" FromRole="Level1" ToRole="User" />
+          <NavigationProperty Name="Level2" Relationship="Model.FK_Level2_Level1" FromRole="Level1" ToRole="Level2" />
+          <NavigationProperty Name="Level3" Relationship="Model.FK_Level3_Level1" FromRole="Level1" ToRole="Level3" />
+          <NavigationProperty Name="Level4" Relationship="Model.FK_Level4_Level1" FromRole="Level1" ToRole="Level4" />
+          <NavigationProperty Name="Users" Relationship="Model.FK_User_Level1" FromRole="Level1" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Level2">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Level1Id" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DisplayOrder" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="Published" Type="Boolean" />
+          <Property Name="IsDefault" Type="Boolean" Nullable="false" />
+          <Property Name="DirectResponsible" Type="Decimal" Precision="18" Scale="0" />
+          <NavigationProperty Name="Level1" Relationship="Model.FK_Level2_Level1" FromRole="Level2" ToRole="Level1" />
+          <NavigationProperty Name="UserCategories" Relationship="Model.FK_Categories_Level2" FromRole="Level2" ToRole="UserCategory" />
+          <NavigationProperty Name="EnterpriseUnits" Relationship="Model.FK_EnterpriseUnits_Level2" FromRole="Level2" ToRole="EnterpriseUnit" />
+          <NavigationProperty Name="JobTitles" Relationship="Model.FK_JobTitle_Level2" FromRole="Level2" ToRole="JobTitle" />
+          <NavigationProperty Name="User" Relationship="Model.FK_Level2_User" FromRole="Level2" ToRole="User" />
+          <NavigationProperty Name="Level3" Relationship="Model.FK_Level3_Level2" FromRole="Level2" ToRole="Level3" />
+          <NavigationProperty Name="Level4" Relationship="Model.FK_Level4_Level2" FromRole="Level2" ToRole="Level4" />
+          <NavigationProperty Name="Users" Relationship="Model.FK_User_Level2" FromRole="Level2" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Level3">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Level1Id" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="Level2Id" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DisplayOrder" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="Published" Type="Boolean" />
+          <Property Name="IsDefault" Type="Boolean" />
+          <Property Name="DirectResponsible" Type="Decimal" Precision="18" Scale="0" />
+          <NavigationProperty Name="Level1" Relationship="Model.FK_Level3_Level1" FromRole="Level3" ToRole="Level1" />
+          <NavigationProperty Name="Level2" Relationship="Model.FK_Level3_Level2" FromRole="Level3" ToRole="Level2" />
+          <NavigationProperty Name="UserCategories" Relationship="Model.FK_Categories_Level3" FromRole="Level3" ToRole="UserCategory" />
+          <NavigationProperty Name="EnterpriseUnits" Relationship="Model.FK_EnterpriseUnits_Level3" FromRole="Level3" ToRole="EnterpriseUnit" />
+          <NavigationProperty Name="JobTitles" Relationship="Model.FK_JobTitle_Level3" FromRole="Level3" ToRole="JobTitle" />
+          <NavigationProperty Name="User" Relationship="Model.FK_Level3_User" FromRole="Level3" ToRole="User" />
+          <NavigationProperty Name="Level4" Relationship="Model.FK_Level4_Level3" FromRole="Level3" ToRole="Level4" />
+          <NavigationProperty Name="Users" Relationship="Model.FK_User_Level3" FromRole="Level3" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Level4">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Level1Id" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="Level2Id" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="Level3Id" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TypeEducationId" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="TypeId" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="IsKindergarten" Type="Boolean" Nullable="false" />
+          <Property Name="IsBasic" Type="Boolean" Nullable="false" />
+          <Property Name="IsMedium" Type="Boolean" Nullable="false" />
+          <Property Name="IsSecondary" Type="Boolean" Nullable="false" />
+          <Property Name="IsMinistryEducation" Type="Boolean" Nullable="false" />
+          <Property Name="IsOtherEducation" Type="Boolean" Nullable="false" />
+          <Property Name="OtherEducationName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DisplayOrder" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="Published" Type="Boolean" Nullable="false" />
+          <Property Name="IsDefault" Type="Boolean" />
+          <Property Name="DirectResponsible" Type="Decimal" Precision="18" Scale="0" />
+          <NavigationProperty Name="Level1" Relationship="Model.FK_Level4_Level1" FromRole="Level4" ToRole="Level1" />
+          <NavigationProperty Name="Level2" Relationship="Model.FK_Level4_Level2" FromRole="Level4" ToRole="Level2" />
+          <NavigationProperty Name="Level3" Relationship="Model.FK_Level4_Level3" FromRole="Level4" ToRole="Level3" />
+          <NavigationProperty Name="UserCategories" Relationship="Model.FK_Categories_Level4" FromRole="Level4" ToRole="UserCategory" />
+          <NavigationProperty Name="EnterpriseUnits" Relationship="Model.FK_EnterpriseUnits_Level4" FromRole="Level4" ToRole="EnterpriseUnit" />
+          <NavigationProperty Name="JobTitles" Relationship="Model.FK_JobTitle_Level4" FromRole="Level4" ToRole="JobTitle" />
+          <NavigationProperty Name="SchoolType" Relationship="Model.FK_Level4_SchoolType" FromRole="Level4" ToRole="SchoolType" />
+          <NavigationProperty Name="TypeEducation" Relationship="Model.FK_Level4_TypeEducation" FromRole="Level4" ToRole="TypeEducation" />
+          <NavigationProperty Name="User" Relationship="Model.FK_Level4_User" FromRole="Level4" ToRole="User" />
+          <NavigationProperty Name="Users" Relationship="Model.FK_User_Level4" FromRole="Level4" ToRole="User" />
+        </EntityType>
+        <EntityType Name="CientificDegree">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Qualifications" Relationship="Model.FK_Qualification_CientificDegree" FromRole="CientificDegree" ToRole="Qualification" />
+        </EntityType>
+        <EntityType Name="Language">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="LanguageCulture" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="UniqueSeoCode" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="FlagImageFileName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Rtl" Type="Boolean" Nullable="false" />
+          <Property Name="Published" Type="Boolean" Nullable="false" />
+          <Property Name="DisplayOrder" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="Menu">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="DescriptionEn" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DescriptionAr" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ResourcesString" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Url" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="ParentId" Type="Int32" />
+          <Property Name="CssClass" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Order" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="Active" Type="Boolean" />
+          <NavigationProperty Name="Menu1" Relationship="Model.FK_Menu_Menu1" FromRole="Menu" ToRole="Menu1" />
+          <NavigationProperty Name="Menu2" Relationship="Model.FK_Menu_Menu1" FromRole="Menu1" ToRole="Menu" />
+          <NavigationProperty Name="MenuPrivelags" Relationship="Model.FK_MenuPrivelags_Menu" FromRole="Menu" ToRole="MenuPrivelag" />
+        </EntityType>
+        <EntityType Name="SchoolType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="TypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Level4" Relationship="Model.FK_Level4_SchoolType" FromRole="SchoolType" ToRole="Level4" />
+        </EntityType>
+        <EntityType Name="SystemSetting">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Value" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TypeEducation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="TypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Level4" Relationship="Model.FK_Level4_TypeEducation" FromRole="TypeEducation" ToRole="Level4" />
+        </EntityType>
+        <EntityType Name="MenuPrivelag">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MenuId" Type="Int32" Nullable="false" />
+          <Property Name="JobTitleId" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="CategoryId" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CretaedBy" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <NavigationProperty Name="Menu" Relationship="Model.FK_MenuPrivelags_Menu" FromRole="MenuPrivelag" ToRole="Menu" />
+          <NavigationProperty Name="JobTitle" Relationship="Model.FK_MenuPrivelags_MenuPrivelags" FromRole="MenuPrivelag" ToRole="JobTitle" />
+          <NavigationProperty Name="UserCategory" Relationship="Model.FK_MenuPrivelags_UserCategory" FromRole="MenuPrivelag" ToRole="UserCategory" />
+        </EntityType>
+        <EntityType Name="Evidence">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StandardId" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="EvidenceDescription" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedById" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LastModifiedById" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="LastModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="DisplayOrder" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <NavigationProperty Name="Standard" Relationship="Model.FK_Evidence_Standard" FromRole="Evidence" ToRole="Standard" />
+        </EntityType>
+        <EntityType Name="Item">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="SectorId" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ShortName" Type="String" Nullable="false" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="Goal" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ShortGoal" Type="String" Nullable="false" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="FixedWeight" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="IntermediateWeight" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="FlexWeight" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="DisplayOrder" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="Publish" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <NavigationProperty Name="Sector" Relationship="Model.FK_Item_Sector" FromRole="Item" ToRole="Sector" />
+          <NavigationProperty Name="ItemNACategories" Relationship="Model.FK_ItemNACategory_Item" FromRole="Item" ToRole="ItemNACategory" />
+          <NavigationProperty Name="Standards" Relationship="Model.FK_Standard_Item" FromRole="Item" ToRole="Standard" />
+          <NavigationProperty Name="SubIndicatorsCategories" Relationship="Model.FK_SubIndicatorsCategory_Item" FromRole="Item" ToRole="SubIndicatorsCategory" />
+        </EntityType>
+        <EntityType Name="ItemNACategory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryId" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="ItemId" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <NavigationProperty Name="Item" Relationship="Model.FK_ItemNACategory_Item" FromRole="ItemNACategory" ToRole="Item" />
+          <NavigationProperty Name="UserCategory" Relationship="Model.FK_ItemNACategory_UserCategory" FromRole="ItemNACategory" ToRole="UserCategory" />
+        </EntityType>
+        <EntityType Name="JobTitle">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Level1Id" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Level2Id" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Level3Id" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Level4Id" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="UserCategoryId" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="JobName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DisplayOrder" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="Deleted" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Level1" Relationship="Model.FK_JobTitle_Level1" FromRole="JobTitle" ToRole="Level1" />
+          <NavigationProperty Name="Level2" Relationship="Model.FK_JobTitle_Level2" FromRole="JobTitle" ToRole="Level2" />
+          <NavigationProperty Name="Level3" Relationship="Model.FK_JobTitle_Level3" FromRole="JobTitle" ToRole="Level3" />
+          <NavigationProperty Name="Level4" Relationship="Model.FK_JobTitle_Level4" FromRole="JobTitle" ToRole="Level4" />
+          <NavigationProperty Name="MenuPrivelags" Relationship="Model.FK_MenuPrivelags_MenuPrivelags" FromRole="JobTitle" ToRole="MenuPrivelag" />
+          <NavigationProperty Name="UserCategory" Relationship="Model.FK_JobTitle_UserCategory" FromRole="JobTitle" ToRole="UserCategory" />
+          <NavigationProperty Name="Users" Relationship="Model.FK_User_JobTitle" FromRole="JobTitle" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Sector">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ShortName" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="DisplayOrder" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="FixedWeight" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="IntermediateWeight" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="FlexWeight" Type="Decimal" Precision="18" Scale="0" />
+          <NavigationProperty Name="Items" Relationship="Model.FK_Item_Sector" FromRole="Sector" ToRole="Item" />
+        </EntityType>
+        <EntityType Name="Standard">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ItemId" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="CategoryId" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="Weight" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="CreatedById" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LastModifiedById" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="LastModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="DisplayOrder" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="Publish" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Evidences" Relationship="Model.FK_Evidence_Standard" FromRole="Standard" ToRole="Evidence" />
+          <NavigationProperty Name="Item" Relationship="Model.FK_Standard_Item" FromRole="Standard" ToRole="Item" />
+          <NavigationProperty Name="UserCategory" Relationship="Model.FK_Standard_UserCategory" FromRole="Standard" ToRole="UserCategory" />
+          <NavigationProperty Name="SubIndicatorsCategories" Relationship="Model.FK_SubIndicatorsCategory_Standard" FromRole="Standard" ToRole="SubIndicatorsCategory" />
+        </EntityType>
+        <EntityType Name="UserCategory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Level1Id" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Level2Id" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Level3Id" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Level4Id" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Type" Type="Int16" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DisplayOrder" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="IsSystemAdmin" Type="Boolean" />
+          <NavigationProperty Name="Level1" Relationship="Model.FK_Categories_Level1" FromRole="UserCategory" ToRole="Level1" />
+          <NavigationProperty Name="Level2" Relationship="Model.FK_Categories_Level2" FromRole="UserCategory" ToRole="Level2" />
+          <NavigationProperty Name="Level3" Relationship="Model.FK_Categories_Level3" FromRole="UserCategory" ToRole="Level3" />
+          <NavigationProperty Name="Level4" Relationship="Model.FK_Categories_Level4" FromRole="UserCategory" ToRole="Level4" />
+          <NavigationProperty Name="MenuPrivelags" Relationship="Model.FK_MenuPrivelags_UserCategory" FromRole="UserCategory" ToRole="MenuPrivelag" />
+          <NavigationProperty Name="ItemNACategories" Relationship="Model.FK_ItemNACategory_UserCategory" FromRole="UserCategory" ToRole="ItemNACategory" />
+          <NavigationProperty Name="JobTitles" Relationship="Model.FK_JobTitle_UserCategory" FromRole="UserCategory" ToRole="JobTitle" />
+          <NavigationProperty Name="Standards" Relationship="Model.FK_Standard_UserCategory" FromRole="UserCategory" ToRole="Standard" />
+          <NavigationProperty Name="SubIndicatorsCategories" Relationship="Model.FK_SubIndicatorsCategory_UserCategory" FromRole="UserCategory" ToRole="SubIndicatorsCategory" />
+          <NavigationProperty Name="SubIndicatorsCategories1" Relationship="Model.FK_SubIndicatorsCategory_UserCategory1" FromRole="UserCategory" ToRole="SubIndicatorsCategory" />
+          <NavigationProperty Name="Users" Relationship="Model.FK_User_UserCategory" FromRole="UserCategory" ToRole="User" />
+        </EntityType>
+        <EntityType Name="CertificatesAndAward">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Source" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DateOfCertificate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UserId" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="User" Relationship="Model.FK_CertificatesAndAward_User" FromRole="CertificatesAndAward" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Course">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TrainingCourse" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="institution" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Period" Type="Int32" Nullable="false" />
+          <Property Name="FromDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ToDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UserId" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="User" Relationship="Model.FK_Course_User" FromRole="Course" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Qualification">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ScientificDegreeId" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="Specialization" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="University" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Year" Type="Int32" Nullable="false" />
+          <Property Name="UserId" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="CientificDegree" Relationship="Model.FK_Qualification_CientificDegree" FromRole="Qualification" ToRole="CientificDegree" />
+          <NavigationProperty Name="User" Relationship="Model.FK_Qualification_User" FromRole="Qualification" ToRole="User" />
+        </EntityType>
+        <EntityType Name="UnitUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="UnitId" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="IsResponsible" Type="Boolean" />
+          <NavigationProperty Name="EnterpriseUnit" Relationship="Model.FK_UnitUsers_EnterpriseUnits" FromRole="UnitUser" ToRole="EnterpriseUnit" />
+          <NavigationProperty Name="User" Relationship="Model.FK_UnitUsers_User" FromRole="UnitUser" ToRole="User" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Level1Id" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Level2Id" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Level3Id" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Level4Id" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="UserCategoryId" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="JobTitleId" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedBy" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SecondName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ThirdName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AnotherPhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GenderId" Type="Int16" Nullable="false" />
+          <Property Name="Address" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="FirstNameEn" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LastNameEn" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Level1" Relationship="Model.FK_Level1_User" FromRole="User" ToRole="Level1" />
+          <NavigationProperty Name="Level11" Relationship="Model.FK_User_Level1" FromRole="User" ToRole="Level1" />
+          <NavigationProperty Name="Level2" Relationship="Model.FK_Level2_User" FromRole="User" ToRole="Level2" />
+          <NavigationProperty Name="Level21" Relationship="Model.FK_User_Level2" FromRole="User" ToRole="Level2" />
+          <NavigationProperty Name="Level3" Relationship="Model.FK_Level3_User" FromRole="User" ToRole="Level3" />
+          <NavigationProperty Name="Level31" Relationship="Model.FK_User_Level3" FromRole="User" ToRole="Level3" />
+          <NavigationProperty Name="Level4" Relationship="Model.FK_Level4_User" FromRole="User" ToRole="Level4" />
+          <NavigationProperty Name="Level41" Relationship="Model.FK_User_Level4" FromRole="User" ToRole="Level4" />
+          <NavigationProperty Name="JobTitle" Relationship="Model.FK_User_JobTitle" FromRole="User" ToRole="JobTitle" />
+          <NavigationProperty Name="UserCategory" Relationship="Model.FK_User_UserCategory" FromRole="User" ToRole="UserCategory" />
+          <NavigationProperty Name="CertificatesAndAwards" Relationship="Model.FK_CertificatesAndAward_User" FromRole="User" ToRole="CertificatesAndAward" />
+          <NavigationProperty Name="Courses" Relationship="Model.FK_Course_User" FromRole="User" ToRole="Course" />
+          <NavigationProperty Name="Qualifications" Relationship="Model.FK_Qualification_User" FromRole="User" ToRole="Qualification" />
+          <NavigationProperty Name="UnitUsers" Relationship="Model.FK_UnitUsers_User" FromRole="User" ToRole="UnitUser" />
+        </EntityType>
+        <EntityType Name="EnterpriseUnit">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Parent" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="EnterpriseUnitsType" Type="Int16" Nullable="false" />
+          <Property Name="Level1Id" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Level2Id" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Level3Id" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Level4Id" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="DisplayOrder" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="CreatedById" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdateBy" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Level1" Relationship="Model.FK_EnterpriseUnits_Level1" FromRole="EnterpriseUnit" ToRole="Level1" />
+          <NavigationProperty Name="Level2" Relationship="Model.FK_EnterpriseUnits_Level2" FromRole="EnterpriseUnit" ToRole="Level2" />
+          <NavigationProperty Name="Level3" Relationship="Model.FK_EnterpriseUnits_Level3" FromRole="EnterpriseUnit" ToRole="Level3" />
+          <NavigationProperty Name="Level4" Relationship="Model.FK_EnterpriseUnits_Level4" FromRole="EnterpriseUnit" ToRole="Level4" />
+          <NavigationProperty Name="UnitUsers" Relationship="Model.FK_UnitUsers_EnterpriseUnits" FromRole="EnterpriseUnit" ToRole="UnitUser" />
+          <NavigationProperty Name="EnterpriseUnits1" Relationship="Model.FK_EnterpriseUnits_EnterpriseUnits" FromRole="EnterpriseUnit" ToRole="EnterpriseUnit1" />
+          <NavigationProperty Name="EnterpriseUnit1" Relationship="Model.FK_EnterpriseUnits_EnterpriseUnits" FromRole="EnterpriseUnit1" ToRole="EnterpriseUnit" />
+          <NavigationProperty Name="EnterpriseUnits11" Relationship="Model.FK_EnterpriseUnits_EnterpriseUnits1" FromRole="EnterpriseUnit" ToRole="EnterpriseUnit1" />
+          <NavigationProperty Name="EnterpriseUnit2" Relationship="Model.FK_EnterpriseUnits_EnterpriseUnits1" FromRole="EnterpriseUnit1" ToRole="EnterpriseUnit" />
+        </EntityType>
+        <EntityType Name="SubIndicatorsCategory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TargetCategory" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="CategoryId" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="ItemId" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="StandardId" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="IsContinuous" Type="Boolean" Nullable="false" />
+          <Property Name="Quantity" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Item" Relationship="Model.FK_SubIndicatorsCategory_Item" FromRole="SubIndicatorsCategory" ToRole="Item" />
+          <NavigationProperty Name="Standard" Relationship="Model.FK_SubIndicatorsCategory_Standard" FromRole="SubIndicatorsCategory" ToRole="Standard" />
+          <NavigationProperty Name="UserCategory" Relationship="Model.FK_SubIndicatorsCategory_UserCategory" FromRole="SubIndicatorsCategory" ToRole="UserCategory" />
+          <NavigationProperty Name="UserCategory1" Relationship="Model.FK_SubIndicatorsCategory_UserCategory1" FromRole="SubIndicatorsCategory" ToRole="UserCategory" />
+        </EntityType>
+        <EntityType Name="vw_All_Level">
+          <Key>
+            <PropertyRef Name="LevelId" />
+            <PropertyRef Name="DisplayOrder" />
+            <PropertyRef Name="levelNumber" />
+          </Key>
+          <Property Name="LevelId" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="Level1Id" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Level2Id" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Level3Id" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Level4Id" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="LevelName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DisplayOrder" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="Published" Type="Int32" />
+          <Property Name="IsDefault" Type="Int32" />
+          <Property Name="DirectResponsible" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="levelNumber" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Categories_Level1">
+          <End Type="Model.Level1" Role="Level1" Multiplicity="0..1" />
+          <End Type="Model.UserCategory" Role="UserCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Level1">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserCategory">
+              <PropertyRef Name="Level1Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EnterpriseUnits_Level1">
+          <End Type="Model.Level1" Role="Level1" Multiplicity="0..1" />
+          <End Type="Model.EnterpriseUnit" Role="EnterpriseUnit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Level1">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EnterpriseUnit">
+              <PropertyRef Name="Level1Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_JobTitle_Level1">
+          <End Type="Model.Level1" Role="Level1" Multiplicity="0..1" />
+          <End Type="Model.JobTitle" Role="JobTitle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Level1">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="JobTitle">
+              <PropertyRef Name="Level1Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Level1_User">
+          <End Type="Model.User" Role="User" Multiplicity="0..1" />
+          <End Type="Model.Level1" Role="Level1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Level1">
+              <PropertyRef Name="DirectResponsible" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Level2_Level1">
+          <End Type="Model.Level1" Role="Level1" Multiplicity="1" />
+          <End Type="Model.Level2" Role="Level2" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Level1">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Level2">
+              <PropertyRef Name="Level1Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Level3_Level1">
+          <End Type="Model.Level1" Role="Level1" Multiplicity="1" />
+          <End Type="Model.Level3" Role="Level3" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Level1">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Level3">
+              <PropertyRef Name="Level1Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Level4_Level1">
+          <End Type="Model.Level1" Role="Level1" Multiplicity="1" />
+          <End Type="Model.Level4" Role="Level4" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Level1">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Level4">
+              <PropertyRef Name="Level1Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Level1">
+          <End Type="Model.Level1" Role="Level1" Multiplicity="0..1" />
+          <End Type="Model.User" Role="User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Level1">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="Level1Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Categories_Level2">
+          <End Type="Model.Level2" Role="Level2" Multiplicity="0..1" />
+          <End Type="Model.UserCategory" Role="UserCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Level2">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserCategory">
+              <PropertyRef Name="Level2Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EnterpriseUnits_Level2">
+          <End Type="Model.Level2" Role="Level2" Multiplicity="0..1" />
+          <End Type="Model.EnterpriseUnit" Role="EnterpriseUnit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Level2">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EnterpriseUnit">
+              <PropertyRef Name="Level2Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_JobTitle_Level2">
+          <End Type="Model.Level2" Role="Level2" Multiplicity="0..1" />
+          <End Type="Model.JobTitle" Role="JobTitle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Level2">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="JobTitle">
+              <PropertyRef Name="Level2Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Level2_User">
+          <End Type="Model.User" Role="User" Multiplicity="0..1" />
+          <End Type="Model.Level2" Role="Level2" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Level2">
+              <PropertyRef Name="DirectResponsible" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Level3_Level2">
+          <End Type="Model.Level2" Role="Level2" Multiplicity="1" />
+          <End Type="Model.Level3" Role="Level3" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Level2">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Level3">
+              <PropertyRef Name="Level2Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Level4_Level2">
+          <End Type="Model.Level2" Role="Level2" Multiplicity="1" />
+          <End Type="Model.Level4" Role="Level4" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Level2">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Level4">
+              <PropertyRef Name="Level2Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Level2">
+          <End Type="Model.Level2" Role="Level2" Multiplicity="0..1" />
+          <End Type="Model.User" Role="User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Level2">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="Level2Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Categories_Level3">
+          <End Type="Model.Level3" Role="Level3" Multiplicity="0..1" />
+          <End Type="Model.UserCategory" Role="UserCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Level3">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserCategory">
+              <PropertyRef Name="Level3Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EnterpriseUnits_Level3">
+          <End Type="Model.Level3" Role="Level3" Multiplicity="0..1" />
+          <End Type="Model.EnterpriseUnit" Role="EnterpriseUnit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Level3">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EnterpriseUnit">
+              <PropertyRef Name="Level3Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_JobTitle_Level3">
+          <End Type="Model.Level3" Role="Level3" Multiplicity="0..1" />
+          <End Type="Model.JobTitle" Role="JobTitle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Level3">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="JobTitle">
+              <PropertyRef Name="Level3Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Level3_User">
+          <End Type="Model.User" Role="User" Multiplicity="0..1" />
+          <End Type="Model.Level3" Role="Level3" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Level3">
+              <PropertyRef Name="DirectResponsible" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Level4_Level3">
+          <End Type="Model.Level3" Role="Level3" Multiplicity="1" />
+          <End Type="Model.Level4" Role="Level4" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Level3">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Level4">
+              <PropertyRef Name="Level3Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Level3">
+          <End Type="Model.Level3" Role="Level3" Multiplicity="0..1" />
+          <End Type="Model.User" Role="User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Level3">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="Level3Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Categories_Level4">
+          <End Type="Model.Level4" Role="Level4" Multiplicity="0..1" />
+          <End Type="Model.UserCategory" Role="UserCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Level4">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserCategory">
+              <PropertyRef Name="Level4Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EnterpriseUnits_Level4">
+          <End Type="Model.Level4" Role="Level4" Multiplicity="0..1" />
+          <End Type="Model.EnterpriseUnit" Role="EnterpriseUnit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Level4">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EnterpriseUnit">
+              <PropertyRef Name="Level4Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_JobTitle_Level4">
+          <End Type="Model.Level4" Role="Level4" Multiplicity="0..1" />
+          <End Type="Model.JobTitle" Role="JobTitle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Level4">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="JobTitle">
+              <PropertyRef Name="Level4Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Level4_SchoolType">
+          <End Type="Model.SchoolType" Role="SchoolType" Multiplicity="1" />
+          <End Type="Model.Level4" Role="Level4" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SchoolType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Level4">
+              <PropertyRef Name="TypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Level4_TypeEducation">
+          <End Type="Model.TypeEducation" Role="TypeEducation" Multiplicity="1" />
+          <End Type="Model.Level4" Role="Level4" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeEducation">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Level4">
+              <PropertyRef Name="TypeEducationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Level4_User">
+          <End Type="Model.User" Role="User" Multiplicity="0..1" />
+          <End Type="Model.Level4" Role="Level4" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Level4">
+              <PropertyRef Name="DirectResponsible" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Level4">
+          <End Type="Model.Level4" Role="Level4" Multiplicity="0..1" />
+          <End Type="Model.User" Role="User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Level4">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="Level4Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Qualification_CientificDegree">
+          <End Type="Model.CientificDegree" Role="CientificDegree" Multiplicity="1" />
+          <End Type="Model.Qualification" Role="Qualification" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CientificDegree">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Qualification">
+              <PropertyRef Name="ScientificDegreeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Menu_Menu1">
+          <End Type="Model.Menu" Role="Menu" Multiplicity="0..1" />
+          <End Type="Model.Menu" Role="Menu1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Menu">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Menu1">
+              <PropertyRef Name="ParentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MenuPrivelags_Menu">
+          <End Type="Model.Menu" Role="Menu" Multiplicity="1" />
+          <End Type="Model.MenuPrivelag" Role="MenuPrivelag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Menu">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MenuPrivelag">
+              <PropertyRef Name="MenuId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MenuPrivelags_MenuPrivelags">
+          <End Type="Model.JobTitle" Role="JobTitle" Multiplicity="0..1" />
+          <End Type="Model.MenuPrivelag" Role="MenuPrivelag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="JobTitle">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MenuPrivelag">
+              <PropertyRef Name="JobTitleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MenuPrivelags_UserCategory">
+          <End Type="Model.UserCategory" Role="UserCategory" Multiplicity="0..1" />
+          <End Type="Model.MenuPrivelag" Role="MenuPrivelag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserCategory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MenuPrivelag">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Evidence_Standard">
+          <End Type="Model.Standard" Role="Standard" Multiplicity="1" />
+          <End Type="Model.Evidence" Role="Evidence" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Standard">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Evidence">
+              <PropertyRef Name="StandardId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Item_Sector">
+          <End Type="Model.Sector" Role="Sector" Multiplicity="1" />
+          <End Type="Model.Item" Role="Item" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sector">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Item">
+              <PropertyRef Name="SectorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ItemNACategory_Item">
+          <End Type="Model.Item" Role="Item" Multiplicity="1" />
+          <End Type="Model.ItemNACategory" Role="ItemNACategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Item">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ItemNACategory">
+              <PropertyRef Name="ItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Standard_Item">
+          <End Type="Model.Item" Role="Item" Multiplicity="1" />
+          <End Type="Model.Standard" Role="Standard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Item">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Standard">
+              <PropertyRef Name="ItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SubIndicatorsCategory_Item">
+          <End Type="Model.Item" Role="Item" Multiplicity="1" />
+          <End Type="Model.SubIndicatorsCategory" Role="SubIndicatorsCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Item">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SubIndicatorsCategory">
+              <PropertyRef Name="ItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ItemNACategory_UserCategory">
+          <End Type="Model.UserCategory" Role="UserCategory" Multiplicity="1" />
+          <End Type="Model.ItemNACategory" Role="ItemNACategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserCategory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ItemNACategory">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_JobTitle_UserCategory">
+          <End Type="Model.UserCategory" Role="UserCategory" Multiplicity="1" />
+          <End Type="Model.JobTitle" Role="JobTitle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserCategory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="JobTitle">
+              <PropertyRef Name="UserCategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_JobTitle">
+          <End Type="Model.JobTitle" Role="JobTitle" Multiplicity="1" />
+          <End Type="Model.User" Role="User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="JobTitle">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="JobTitleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Standard_UserCategory">
+          <End Type="Model.UserCategory" Role="UserCategory" Multiplicity="1" />
+          <End Type="Model.Standard" Role="Standard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserCategory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Standard">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SubIndicatorsCategory_Standard">
+          <End Type="Model.Standard" Role="Standard" Multiplicity="1" />
+          <End Type="Model.SubIndicatorsCategory" Role="SubIndicatorsCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Standard">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SubIndicatorsCategory">
+              <PropertyRef Name="StandardId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SubIndicatorsCategory_UserCategory">
+          <End Type="Model.UserCategory" Role="UserCategory" Multiplicity="1" />
+          <End Type="Model.SubIndicatorsCategory" Role="SubIndicatorsCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserCategory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SubIndicatorsCategory">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SubIndicatorsCategory_UserCategory1">
+          <End Type="Model.UserCategory" Role="UserCategory" Multiplicity="1" />
+          <End Type="Model.SubIndicatorsCategory" Role="SubIndicatorsCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserCategory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SubIndicatorsCategory">
+              <PropertyRef Name="TargetCategory" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_UserCategory">
+          <End Type="Model.UserCategory" Role="UserCategory" Multiplicity="1" />
+          <End Type="Model.User" Role="User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserCategory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="UserCategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CertificatesAndAward_User">
+          <End Type="Model.User" Role="User" Multiplicity="1" />
+          <End Type="Model.CertificatesAndAward" Role="CertificatesAndAward" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CertificatesAndAward">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Course_User">
+          <End Type="Model.User" Role="User" Multiplicity="1" />
+          <End Type="Model.Course" Role="Course" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Course">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Qualification_User">
+          <End Type="Model.User" Role="User" Multiplicity="1" />
+          <End Type="Model.Qualification" Role="Qualification" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Qualification">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UnitUsers_EnterpriseUnits">
+          <End Type="Model.EnterpriseUnit" Role="EnterpriseUnit" Multiplicity="1" />
+          <End Type="Model.UnitUser" Role="UnitUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EnterpriseUnit">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UnitUser">
+              <PropertyRef Name="UnitId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UnitUsers_User">
+          <End Type="Model.User" Role="User" Multiplicity="1" />
+          <End Type="Model.UnitUser" Role="UnitUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UnitUser">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EnterpriseUnits_EnterpriseUnits">
+          <End Type="Model.EnterpriseUnit" Role="EnterpriseUnit" Multiplicity="0..1" />
+          <End Type="Model.EnterpriseUnit" Role="EnterpriseUnit1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EnterpriseUnit">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EnterpriseUnit1">
+              <PropertyRef Name="Parent" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EnterpriseUnits_EnterpriseUnits1">
+          <End Type="Model.EnterpriseUnit" Role="EnterpriseUnit" Multiplicity="1" />
+          <End Type="Model.EnterpriseUnit" Role="EnterpriseUnit1" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="EnterpriseUnit">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EnterpriseUnit1">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="ActEntities">
+          <EntitySetMapping Name="Level1">
+            <EntityTypeMapping TypeName="Model.Level1">
+              <MappingFragment StoreEntitySet="Level1">
+                <ScalarProperty Name="DirectResponsible" ColumnName="DirectResponsible" />
+                <ScalarProperty Name="IsDefault" ColumnName="IsDefault" />
+                <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+                <ScalarProperty Name="Published" ColumnName="Published" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Level2">
+            <EntityTypeMapping TypeName="Model.Level2">
+              <MappingFragment StoreEntitySet="Level2">
+                <ScalarProperty Name="DirectResponsible" ColumnName="DirectResponsible" />
+                <ScalarProperty Name="IsDefault" ColumnName="IsDefault" />
+                <ScalarProperty Name="Published" ColumnName="Published" />
+                <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Level1Id" ColumnName="Level1Id" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Level3">
+            <EntityTypeMapping TypeName="Model.Level3">
+              <MappingFragment StoreEntitySet="Level3">
+                <ScalarProperty Name="DirectResponsible" ColumnName="DirectResponsible" />
+                <ScalarProperty Name="IsDefault" ColumnName="IsDefault" />
+                <ScalarProperty Name="Published" ColumnName="Published" />
+                <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Level2Id" ColumnName="Level2Id" />
+                <ScalarProperty Name="Level1Id" ColumnName="Level1Id" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Level4">
+            <EntityTypeMapping TypeName="Model.Level4">
+              <MappingFragment StoreEntitySet="Level4">
+                <ScalarProperty Name="DirectResponsible" ColumnName="DirectResponsible" />
+                <ScalarProperty Name="IsDefault" ColumnName="IsDefault" />
+                <ScalarProperty Name="Published" ColumnName="Published" />
+                <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+                <ScalarProperty Name="OtherEducationName" ColumnName="OtherEducationName" />
+                <ScalarProperty Name="IsOtherEducation" ColumnName="IsOtherEducation" />
+                <ScalarProperty Name="IsMinistryEducation" ColumnName="IsMinistryEducation" />
+                <ScalarProperty Name="IsSecondary" ColumnName="IsSecondary" />
+                <ScalarProperty Name="IsMedium" ColumnName="IsMedium" />
+                <ScalarProperty Name="IsBasic" ColumnName="IsBasic" />
+                <ScalarProperty Name="IsKindergarten" ColumnName="IsKindergarten" />
+                <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+                <ScalarProperty Name="TypeEducationId" ColumnName="TypeEducationId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Level3Id" ColumnName="Level3Id" />
+                <ScalarProperty Name="Level2Id" ColumnName="Level2Id" />
+                <ScalarProperty Name="Level1Id" ColumnName="Level1Id" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CientificDegrees">
+            <EntityTypeMapping TypeName="Model.CientificDegree">
+              <MappingFragment StoreEntitySet="CientificDegree">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Languages">
+            <EntityTypeMapping TypeName="Model.Language">
+              <MappingFragment StoreEntitySet="Language">
+                <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+                <ScalarProperty Name="Published" ColumnName="Published" />
+                <ScalarProperty Name="Rtl" ColumnName="Rtl" />
+                <ScalarProperty Name="FlagImageFileName" ColumnName="FlagImageFileName" />
+                <ScalarProperty Name="UniqueSeoCode" ColumnName="UniqueSeoCode" />
+                <ScalarProperty Name="LanguageCulture" ColumnName="LanguageCulture" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Menus">
+            <EntityTypeMapping TypeName="Model.Menu">
+              <MappingFragment StoreEntitySet="Menu">
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="Order" ColumnName="Order" />
+                <ScalarProperty Name="CssClass" ColumnName="CssClass" />
+                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+                <ScalarProperty Name="Url" ColumnName="Url" />
+                <ScalarProperty Name="ResourcesString" ColumnName="ResourcesString" />
+                <ScalarProperty Name="DescriptionAr" ColumnName="DescriptionAr" />
+                <ScalarProperty Name="DescriptionEn" ColumnName="DescriptionEn" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SchoolTypes">
+            <EntityTypeMapping TypeName="Model.SchoolType">
+              <MappingFragment StoreEntitySet="SchoolType">
+                <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SystemSettings">
+            <EntityTypeMapping TypeName="Model.SystemSetting">
+              <MappingFragment StoreEntitySet="SystemSetting">
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TypeEducations">
+            <EntityTypeMapping TypeName="Model.TypeEducation">
+              <MappingFragment StoreEntitySet="TypeEducation">
+                <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MenuPrivelags">
+            <EntityTypeMapping TypeName="Model.MenuPrivelag">
+              <MappingFragment StoreEntitySet="MenuPrivelags">
+                <ScalarProperty Name="CretaedBy" ColumnName="CretaedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="JobTitleId" ColumnName="JobTitleId" />
+                <ScalarProperty Name="MenuId" ColumnName="MenuId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Evidences">
+            <EntityTypeMapping TypeName="Model.Evidence">
+              <MappingFragment StoreEntitySet="Evidence">
+                <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+                <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+                <ScalarProperty Name="LastModifiedById" ColumnName="LastModifiedById" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+                <ScalarProperty Name="EvidenceDescription" ColumnName="EvidenceDescription" />
+                <ScalarProperty Name="StandardId" ColumnName="StandardId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Items">
+            <EntityTypeMapping TypeName="Model.Item">
+              <MappingFragment StoreEntitySet="Item">
+                <ScalarProperty Name="Publish" ColumnName="Publish" />
+                <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+                <ScalarProperty Name="FlexWeight" ColumnName="FlexWeight" />
+                <ScalarProperty Name="IntermediateWeight" ColumnName="IntermediateWeight" />
+                <ScalarProperty Name="FixedWeight" ColumnName="FixedWeight" />
+                <ScalarProperty Name="ShortGoal" ColumnName="ShortGoal" />
+                <ScalarProperty Name="Goal" ColumnName="Goal" />
+                <ScalarProperty Name="ShortName" ColumnName="ShortName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="SectorId" ColumnName="SectorId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ItemNACategories">
+            <EntityTypeMapping TypeName="Model.ItemNACategory">
+              <MappingFragment StoreEntitySet="ItemNACategory">
+                <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JobTitles">
+            <EntityTypeMapping TypeName="Model.JobTitle">
+              <MappingFragment StoreEntitySet="JobTitle">
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+                <ScalarProperty Name="JobName" ColumnName="JobName" />
+                <ScalarProperty Name="UserCategoryId" ColumnName="UserCategoryId" />
+                <ScalarProperty Name="Level4Id" ColumnName="Level4Id" />
+                <ScalarProperty Name="Level3Id" ColumnName="Level3Id" />
+                <ScalarProperty Name="Level2Id" ColumnName="Level2Id" />
+                <ScalarProperty Name="Level1Id" ColumnName="Level1Id" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sectors">
+            <EntityTypeMapping TypeName="Model.Sector">
+              <MappingFragment StoreEntitySet="Sector">
+                <ScalarProperty Name="FlexWeight" ColumnName="FlexWeight" />
+                <ScalarProperty Name="IntermediateWeight" ColumnName="IntermediateWeight" />
+                <ScalarProperty Name="FixedWeight" ColumnName="FixedWeight" />
+                <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+                <ScalarProperty Name="ShortName" ColumnName="ShortName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Standards">
+            <EntityTypeMapping TypeName="Model.Standard">
+              <MappingFragment StoreEntitySet="Standard">
+                <ScalarProperty Name="Publish" ColumnName="Publish" />
+                <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+                <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+                <ScalarProperty Name="LastModifiedById" ColumnName="LastModifiedById" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserCategories">
+            <EntityTypeMapping TypeName="Model.UserCategory">
+              <MappingFragment StoreEntitySet="UserCategory">
+                <ScalarProperty Name="IsSystemAdmin" ColumnName="IsSystemAdmin" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Level4Id" ColumnName="Level4Id" />
+                <ScalarProperty Name="Level3Id" ColumnName="Level3Id" />
+                <ScalarProperty Name="Level2Id" ColumnName="Level2Id" />
+                <ScalarProperty Name="Level1Id" ColumnName="Level1Id" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CertificatesAndAwards">
+            <EntityTypeMapping TypeName="Model.CertificatesAndAward">
+              <MappingFragment StoreEntitySet="CertificatesAndAward">
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="DateOfCertificate" ColumnName="DateOfCertificate" />
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Courses">
+            <EntityTypeMapping TypeName="Model.Course">
+              <MappingFragment StoreEntitySet="Course">
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+                <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+                <ScalarProperty Name="Period" ColumnName="Period" />
+                <ScalarProperty Name="institution" ColumnName="institution" />
+                <ScalarProperty Name="TrainingCourse" ColumnName="TrainingCourse" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Qualifications">
+            <EntityTypeMapping TypeName="Model.Qualification">
+              <MappingFragment StoreEntitySet="Qualification">
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="University" ColumnName="University" />
+                <ScalarProperty Name="Specialization" ColumnName="Specialization" />
+                <ScalarProperty Name="ScientificDegreeId" ColumnName="ScientificDegreeId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UnitUsers">
+            <EntityTypeMapping TypeName="Model.UnitUser">
+              <MappingFragment StoreEntitySet="UnitUsers">
+                <ScalarProperty Name="IsResponsible" ColumnName="IsResponsible" />
+                <ScalarProperty Name="UnitId" ColumnName="UnitId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="Model.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="LastNameEn" ColumnName="LastNameEn" />
+                <ScalarProperty Name="FirstNameEn" ColumnName="FirstNameEn" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="GenderId" ColumnName="GenderId" />
+                <ScalarProperty Name="AnotherPhoneNumber" ColumnName="AnotherPhoneNumber" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="ThirdName" ColumnName="ThirdName" />
+                <ScalarProperty Name="SecondName" ColumnName="SecondName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="JobTitleId" ColumnName="JobTitleId" />
+                <ScalarProperty Name="UserCategoryId" ColumnName="UserCategoryId" />
+                <ScalarProperty Name="Level4Id" ColumnName="Level4Id" />
+                <ScalarProperty Name="Level3Id" ColumnName="Level3Id" />
+                <ScalarProperty Name="Level2Id" ColumnName="Level2Id" />
+                <ScalarProperty Name="Level1Id" ColumnName="Level1Id" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EnterpriseUnits">
+            <EntityTypeMapping TypeName="Model.EnterpriseUnit">
+              <MappingFragment StoreEntitySet="EnterpriseUnits">
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+                <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Level4Id" ColumnName="Level4Id" />
+                <ScalarProperty Name="Level3Id" ColumnName="Level3Id" />
+                <ScalarProperty Name="Level2Id" ColumnName="Level2Id" />
+                <ScalarProperty Name="Level1Id" ColumnName="Level1Id" />
+                <ScalarProperty Name="EnterpriseUnitsType" ColumnName="EnterpriseUnitsType" />
+                <ScalarProperty Name="Parent" ColumnName="Parent" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SubIndicatorsCategories">
+            <EntityTypeMapping TypeName="Model.SubIndicatorsCategory">
+              <MappingFragment StoreEntitySet="SubIndicatorsCategory">
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="IsContinuous" ColumnName="IsContinuous" />
+                <ScalarProperty Name="StandardId" ColumnName="StandardId" />
+                <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="TargetCategory" ColumnName="TargetCategory" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_All_Level">
+            <EntityTypeMapping TypeName="Model.vw_All_Level">
+              <MappingFragment StoreEntitySet="vw_All_Level">
+                <ScalarProperty Name="levelNumber" ColumnName="levelNumber" />
+                <ScalarProperty Name="DirectResponsible" ColumnName="DirectResponsible" />
+                <ScalarProperty Name="IsDefault" ColumnName="IsDefault" />
+                <ScalarProperty Name="Published" ColumnName="Published" />
+                <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+                <ScalarProperty Name="LevelName" ColumnName="LevelName" />
+                <ScalarProperty Name="Level4Id" ColumnName="Level4Id" />
+                <ScalarProperty Name="Level3Id" ColumnName="Level3Id" />
+                <ScalarProperty Name="Level2Id" ColumnName="Level2Id" />
+                <ScalarProperty Name="Level1Id" ColumnName="Level1Id" />
+                <ScalarProperty Name="LevelId" ColumnName="LevelId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

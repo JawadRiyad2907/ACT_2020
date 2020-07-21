@@ -1,0 +1,315 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AdministrativeUnits_Add" xml:space="preserve">
+    <value>اضافة الوحدات الادارية</value>
+  </data>
+  <data name="AdministrativeUnits_Edit" xml:space="preserve">
+    <value>تعديل الوحدات الادارية</value>
+  </data>
+  <data name="AdministrativeUnits_Index" xml:space="preserve">
+    <value>ادارة الوحدات الادارية</value>
+  </data>
+  <data name="CertificatesAndAward_Add" xml:space="preserve">
+    <value>اضافة الشهادات و الجوائز</value>
+  </data>
+  <data name="CertificatesAndAward_Edit" xml:space="preserve">
+    <value>تعديل الشهادات و الجوائز</value>
+  </data>
+  <data name="CertificatesAndAward_Index" xml:space="preserve">
+    <value>الشهادات و الجوائز</value>
+  </data>
+  <data name="Course_Add" xml:space="preserve">
+    <value>اضافة دورة</value>
+  </data>
+  <data name="Course_Edit" xml:space="preserve">
+    <value>تعديل الدورة</value>
+  </data>
+  <data name="Course_Index" xml:space="preserve">
+    <value>الدورات</value>
+  </data>
+  <data name="DirectResponsible_Edit" xml:space="preserve">
+    <value>تعديل المسؤول المباشر</value>
+  </data>
+  <data name="DirectResponsible_Index" xml:space="preserve">
+    <value>تحديد المسؤول المباشر</value>
+  </data>
+  <data name="EducationalUnits_Add" xml:space="preserve">
+    <value>اضافة الوحدات التعليمية</value>
+  </data>
+  <data name="EducationalUnits_Edit" xml:space="preserve">
+    <value>تعديل الوحدات التعليمية</value>
+  </data>
+  <data name="EducationalUnits_Index" xml:space="preserve">
+    <value>ادارة الوحدات التعليمية</value>
+  </data>
+  <data name="EnterpriseUnits" xml:space="preserve">
+    <value>ادارة وحدات المؤسسه</value>
+  </data>
+  <data name="Evidence_Add" xml:space="preserve">
+    <value>اضافة شواهد واثباتات</value>
+  </data>
+  <data name="Evidence_Edit" xml:space="preserve">
+    <value>تعديل الشواهد والاثباتات</value>
+  </data>
+  <data name="Evidence_Index" xml:space="preserve">
+    <value>الشواهد والاثباتات</value>
+  </data>
+  <data name="IndicatorsPanel" xml:space="preserve">
+    <value>لوحة المؤشرات</value>
+  </data>
+  <data name="Item_Index" xml:space="preserve">
+    <value>البنود والمعايير</value>
+  </data>
+  <data name="JobTitle_Add" xml:space="preserve">
+    <value>إضافة مسمى وظيفي</value>
+  </data>
+  <data name="JobTitle_Edit" xml:space="preserve">
+    <value>تعديل مسمى وظيفي</value>
+  </data>
+  <data name="JobTitle_Index" xml:space="preserve">
+    <value>إدارة المسميات الوظيفية</value>
+  </data>
+  <data name="LanguageManagement" xml:space="preserve">
+    <value>ادارة اللغات والمفردات</value>
+  </data>
+  <data name="Level1_Add" xml:space="preserve">
+    <value>اضافة المؤسسات م1</value>
+  </data>
+  <data name="Level1_Edit" xml:space="preserve">
+    <value>تعديل المؤسسات م1</value>
+  </data>
+  <data name="Level1_Index" xml:space="preserve">
+    <value>اعداد المؤسسات م1</value>
+  </data>
+  <data name="Level2_Add" xml:space="preserve">
+    <value>اضافة المؤسسات م2</value>
+  </data>
+  <data name="Level2_Edit" xml:space="preserve">
+    <value>تعديل المؤسسات م2</value>
+  </data>
+  <data name="Level2_Index" xml:space="preserve">
+    <value>اعداد المؤسسات م2</value>
+  </data>
+  <data name="Level3_Add" xml:space="preserve">
+    <value>اضافة المؤسسات م3</value>
+  </data>
+  <data name="Level3_Edit" xml:space="preserve">
+    <value>تعديل المؤسسات م3</value>
+  </data>
+  <data name="Level3_Index" xml:space="preserve">
+    <value>اعداد المؤسسات م3</value>
+  </data>
+  <data name="Level4_Add" xml:space="preserve">
+    <value>اضافة المؤسسات م4</value>
+  </data>
+  <data name="Level4_Edit" xml:space="preserve">
+    <value>تعديل المؤسسات م4</value>
+  </data>
+  <data name="Level4_Index" xml:space="preserve">
+    <value>اعداد المؤسسات م4</value>
+  </data>
+  <data name="MainIndicators_Index" xml:space="preserve">
+    <value>لوحة المؤشرات الرئيسية</value>
+  </data>
+  <data name="MyInfo_Edit" xml:space="preserve">
+    <value>تعديل معلوماتي الاساسية</value>
+  </data>
+  <data name="MyInfo_Index" xml:space="preserve">
+    <value>معلوماتي الاساسية</value>
+  </data>
+  <data name="MyPerformance_Index" xml:space="preserve">
+    <value>أدائي المرحلي</value>
+  </data>
+  <data name="OrganizationsManagement" xml:space="preserve">
+    <value>ادارة المؤسسات</value>
+  </data>
+  <data name="Privelages" xml:space="preserve">
+    <value>الصلاحيات</value>
+  </data>
+  <data name="Privelages_Add" xml:space="preserve">
+    <value>إضافة صلاحيات</value>
+  </data>
+  <data name="Qualification_Add" xml:space="preserve">
+    <value>اضافة المؤهلات العلمية</value>
+  </data>
+  <data name="Qualification_Edit" xml:space="preserve">
+    <value>تعديل المؤهلات العلمية</value>
+  </data>
+  <data name="Qualification_Index" xml:space="preserve">
+    <value>المؤهلات العلمية</value>
+  </data>
+  <data name="Standard_Add" xml:space="preserve">
+    <value>اضافة معيار</value>
+  </data>
+  <data name="Standard_Edit" xml:space="preserve">
+    <value>تعديل المعيار</value>
+  </data>
+  <data name="Standard_Index" xml:space="preserve">
+    <value>المعايير</value>
+  </data>
+  <data name="SubIndicatorsPanel_Index" xml:space="preserve">
+    <value>لوحة المؤشرات الفرعية</value>
+  </data>
+  <data name="SystemAdministration" xml:space="preserve">
+    <value>ادارة النظام العام</value>
+  </data>
+  <data name="UserCategory_Add" xml:space="preserve">
+    <value>اضافة فئات المستخدمين</value>
+  </data>
+  <data name="UserCategory_Edit" xml:space="preserve">
+    <value>تعديل فئات المستخدمين</value>
+  </data>
+  <data name="UserCategory_Index" xml:space="preserve">
+    <value>إدارة فئات المستخدمين</value>
+  </data>
+  <data name="UserInfo" xml:space="preserve">
+    <value>بياناتي الخاصة</value>
+  </data>
+  <data name="UserInfo_Certificates" xml:space="preserve">
+    <value>شهادات تقدير وجوائز</value>
+  </data>
+  <data name="UserInfo_Courses" xml:space="preserve">
+    <value>الدورات التدريبية</value>
+  </data>
+  <data name="UserInfo_MyInfo" xml:space="preserve">
+    <value>معلوماتي الاساسية</value>
+  </data>
+  <data name="UserInfo_Qualifications" xml:space="preserve">
+    <value>المؤهلات العلمية</value>
+  </data>
+  <data name="UserManagment" xml:space="preserve">
+    <value>ادارة المستخدمين</value>
+  </data>
+  <data name="UserUnit" xml:space="preserve">
+    <value>تسكين المستخدمين</value>
+  </data>
+  <data name="User_Add" xml:space="preserve">
+    <value>اضافة المستخدمين</value>
+  </data>
+  <data name="User_Edit" xml:space="preserve">
+    <value>تعديل المستخدمين</value>
+  </data>
+  <data name="User_Index" xml:space="preserve">
+    <value>المستخدمين</value>
+  </data>
+  <data name="WorkPlanning" xml:space="preserve">
+    <value>التخطيط وتنظيم العمل</value>
+  </data>
+</root>

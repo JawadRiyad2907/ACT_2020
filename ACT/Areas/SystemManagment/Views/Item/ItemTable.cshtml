@@ -1,0 +1,126 @@
+﻿@using ACT.Models;
+@using ACT.ViewModel;
+@model IList<Sector>
+@{
+    var uerCategory = (ViewBag.UerCategory as UserCategoryViewModel);
+}
+
+@if (Model != null && Model.Count > 0)
+{
+    <table class="table table-striped table-bordered table-hover" id="grid-object">
+
+
+        <thead>
+            <tr>
+                <th colspan="8" class="center bg-blue-dark">
+                    <h4>@uerCategory.Name</h4>
+                </th>
+            </tr>
+            <tr class="heading">
+                <th>
+                    #
+                </th>
+                <th>
+                    @Resources.LocalizedText.Item_ShortName
+                </th>
+
+                <th>
+                    @Resources.LocalizedText.Item_FixedWeight
+
+                </th>
+                <th>
+                    @Resources.LocalizedText.Item_IntermediateWeight
+
+                </th>
+                <th>
+                    @Resources.LocalizedText.Item_FlexWeight
+
+                </th>
+                <th>
+                    المعايير
+                </th>
+                <th>
+
+                </th>
+                <th>
+
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var sec in Model)
+            {
+                <tr class="bg-yellow">
+                    <td>
+                        @sec.Id
+                    </td>
+                    <td>
+                        @sec.ShortName
+                    </td>
+
+                    <td>
+                        @sec.FixedWeight
+                    </td>
+                    <td>
+                        @sec.IntermediateWeight
+                    </td>
+                    <td>
+                        @sec.FlexWeight
+                    </td>
+
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+
+                int ItemIndex = 0;
+                foreach (var item in sec.Items)
+                {
+                    ItemIndex++;
+                    string IsNa = item.ItemNACategories.Count > 0 ? "" : "checked";
+                    <tr>
+                        <td>
+                            @item.SectorId / @ItemIndex
+                        </td>
+                        <td>
+                            @item.ShortName
+                        </td>
+                        <td>
+                            @item.FixedWeight
+                        </td>
+                        <td>
+                            @item.IntermediateWeight
+                        </td>
+                        <td>
+                            @item.FlexWeight
+                        </td>
+                        <td>
+                            @{int index = 1; }
+                            @foreach (var st in item.Standards)
+                            {
+                                @index <span>.</span> @st.Name
+                                { index++; }
+                                <br />
+                            }
+                        </td>
+                        <td>
+                            <a href=" @Url.Action("Index", "Standard", new { area = "SystemManagment", ItemId=item.Id,CategoryId=uerCategory.Id })" class="btn default btn-xs green-stripe"><i class="fa  fa-exchange"></i> تعديل المعايير</a>
+                        </td>
+                        <td>
+                            <input data-item-id="@item.Id" @IsNa type="checkbox" class="make-switch" data-on-text="@Resources.LocalizedText.Item_NA_Yes" data-off-text="@Resources.LocalizedText.Item_NA_No" data-on-color="default" data-off-color="danger" data-size="small">
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="note note-danger">
+        <p>
+            @Resources.LocalizedText.PleaseSelectCategory
+        </p>
+    </div>
+}
+

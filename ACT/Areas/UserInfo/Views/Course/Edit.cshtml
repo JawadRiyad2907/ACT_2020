@@ -1,0 +1,84 @@
+﻿@using ACT.ViewModel;
+@model CourseViewModel
+@{
+    var ajaxOptions = new AjaxOptions
+    {
+        OnBegin = "onFormBegin",
+        OnComplete = "onFormComplete",
+        HttpMethod = "POST"
+    };
+}
+
+@using (Ajax.BeginForm(null, null, ajaxOptions, new { enctype = "multipart/form-data" }))
+{
+    @Html.HiddenFor(x => x.Id)
+    <div class="portlet">
+        <div class="portlet-title">
+            <div class="actions btn-set">
+                <a href="@Url.Action("Index")" class="btn default"><i class="fa fa-reply"></i> رجوع </a>
+                <button type="submit" class="btn  green"><i class="fa fa-check"></i> حفظ</button>
+            </div>
+        </div>
+        <div class="portlet-body form">
+            <div class="form-body">
+                <div class="form-group row">
+                    @Html.LabelFor(model => model.TrainingCourse, new { @class = "control-label col-md-1" })
+                    <div class="col-md-4">
+                        @Html.EditorFor(model => model.TrainingCourse, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                        @Html.ValidationMessageFor(model => model.TrainingCourse)
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    @Html.LabelFor(model => model.institution, new { @class = "control-label col-md-1" })
+                    <div class="col-md-4">
+                        @Html.EditorFor(model => model.institution, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                        @Html.ValidationMessageFor(model => model.institution)
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    @Html.LabelFor(model => model.Period, new { @class = "control-label col-md-1" })
+                    <div class="col-md-4">
+                        @Html.EditorFor(model => model.Period, new { htmlAttributes = new { @class = "form-control touchspin_number input-sm" } })
+                        @Html.ValidationMessageFor(model => model.Period)
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    @Html.LabelFor(model => model.FromDate, new { @class = "control-label col-md-1" })
+                    <div class="col-md-4">
+                        <div class="input-group date  date-picker">
+                            @Html.EditorFor(model => model.FromDate, new { htmlAttributes = new { @class = "form-control ", @readonly = "" } })
+                            <span class="input-group-btn">
+                                <button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
+                            </span>
+                        </div>
+                        @Html.ValidationMessageFor(model => model.FromDate)
+                    </div>
+                </div>
+                <div class="form-group row">
+                    @Html.LabelFor(model => model.ToDate, new { @class = "control-label col-md-1" })
+                    <div class="col-md-4">
+                        <div class="input-group date  date-picker">
+                            @Html.EditorFor(model => model.ToDate, new { htmlAttributes = new { @class = "form-control ", @readonly = "" } })
+                            <span class="input-group-btn">
+                                <button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
+                            </span>
+                        </div>
+                        @Html.ValidationMessageFor(model => model.ToDate)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+
+
+@section scripts
+{
+    <script>
+        var returnUrl = "@Url.Action("Index")";
+    </script>
+}

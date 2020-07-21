@@ -1,0 +1,318 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AdministrativeUnits_Add" xml:space="preserve">
+    <value>Add Administrative Units</value>
+  </data>
+  <data name="AdministrativeUnits_Edit" xml:space="preserve">
+    <value>Edit Administrative Units</value>
+  </data>
+  <data name="AdministrativeUnits_Index" xml:space="preserve">
+    <value>Administrative Units</value>
+  </data>
+  <data name="CertificatesAndAward_Add" xml:space="preserve">
+    <value>Add Certificates And Award</value>
+  </data>
+  <data name="CertificatesAndAward_Edit" xml:space="preserve">
+    <value>Edit Certificates And Award</value>
+  </data>
+  <data name="CertificatesAndAward_Index" xml:space="preserve">
+    <value>Certificates And Award</value>
+  </data>
+  <data name="Course_Add" xml:space="preserve">
+    <value>Add Course</value>
+  </data>
+  <data name="Course_Edit" xml:space="preserve">
+    <value>Edit Course</value>
+  </data>
+  <data name="Course_Index" xml:space="preserve">
+    <value>Course</value>
+  </data>
+  <data name="DirectResponsible_Edit" xml:space="preserve">
+    <value>Edit Direct Responsible</value>
+  </data>
+  <data name="DirectResponsible_Index" xml:space="preserve">
+    <value>Direct Responsible</value>
+  </data>
+  <data name="EducationalUnits_Add" xml:space="preserve">
+    <value>Add Educational Units</value>
+  </data>
+  <data name="EducationalUnits_Edit" xml:space="preserve">
+    <value>Edit Educational Units</value>
+  </data>
+  <data name="EducationalUnits_Index" xml:space="preserve">
+    <value>Educational Units</value>
+  </data>
+  <data name="EducationalUnits_Index1" xml:space="preserve">
+    <value>Educational Units</value>
+  </data>
+  <data name="EnterpriseUnits" xml:space="preserve">
+    <value>Manage Enterprise Units</value>
+  </data>
+  <data name="Evidence_Add" xml:space="preserve">
+    <value>Evidence Standard</value>
+  </data>
+  <data name="Evidence_Edit" xml:space="preserve">
+    <value>Evidence Standard</value>
+  </data>
+  <data name="Evidence_Index" xml:space="preserve">
+    <value>Evidence</value>
+  </data>
+  <data name="IndicatorsPanel" xml:space="preserve">
+    <value>Indicators Panel</value>
+  </data>
+  <data name="Item_Index" xml:space="preserve">
+    <value>Item and standards</value>
+  </data>
+  <data name="JobTitle_Add" xml:space="preserve">
+    <value>Add Job Title</value>
+  </data>
+  <data name="JobTitle_Edit" xml:space="preserve">
+    <value>Edit Job Title</value>
+  </data>
+  <data name="JobTitle_Index" xml:space="preserve">
+    <value>Manage Job Titles</value>
+  </data>
+  <data name="LanguageManagement" xml:space="preserve">
+    <value>Language Management</value>
+  </data>
+  <data name="Level1_Add" xml:space="preserve">
+    <value>Add Level 1</value>
+  </data>
+  <data name="Level1_Edit" xml:space="preserve">
+    <value>Edit Level 1</value>
+  </data>
+  <data name="Level1_Index" xml:space="preserve">
+    <value>Manage Level 1</value>
+  </data>
+  <data name="Level2_Add" xml:space="preserve">
+    <value>Add Level 2</value>
+  </data>
+  <data name="Level2_Edit" xml:space="preserve">
+    <value>Edit Level 2</value>
+  </data>
+  <data name="Level2_Index" xml:space="preserve">
+    <value>Manage Level 2</value>
+  </data>
+  <data name="Level3_Add" xml:space="preserve">
+    <value>Add Level 3</value>
+  </data>
+  <data name="Level3_Edit" xml:space="preserve">
+    <value>Edit Level 3</value>
+  </data>
+  <data name="Level3_Index" xml:space="preserve">
+    <value>Manage Level 3</value>
+  </data>
+  <data name="Level4_Add" xml:space="preserve">
+    <value>Add Level 4</value>
+  </data>
+  <data name="Level4_Edit" xml:space="preserve">
+    <value>Edit Level 4</value>
+  </data>
+  <data name="Level4_Index" xml:space="preserve">
+    <value>Manage Level 4</value>
+  </data>
+  <data name="MainIndicators_Index" xml:space="preserve">
+    <value>Main Indicators Panel</value>
+  </data>
+  <data name="MyInfo_Edit" xml:space="preserve">
+    <value>Edit My Information</value>
+  </data>
+  <data name="MyInfo_Index" xml:space="preserve">
+    <value>My Information</value>
+  </data>
+  <data name="MyPerformance_Index" xml:space="preserve">
+    <value>My Stage Performance</value>
+  </data>
+  <data name="OrganizationsManagement" xml:space="preserve">
+    <value>Organizations Management</value>
+  </data>
+  <data name="Privelages" xml:space="preserve">
+    <value>Privelages</value>
+  </data>
+  <data name="Privelages_Add" xml:space="preserve">
+    <value>Add Privelages</value>
+  </data>
+  <data name="Qualification_Add" xml:space="preserve">
+    <value>Add Qualification</value>
+  </data>
+  <data name="Qualification_Edit" xml:space="preserve">
+    <value>Edit Qualification</value>
+  </data>
+  <data name="Qualification_Index" xml:space="preserve">
+    <value>Qualification</value>
+  </data>
+  <data name="Standard_Add" xml:space="preserve">
+    <value>Add Standard</value>
+  </data>
+  <data name="Standard_Edit" xml:space="preserve">
+    <value>Edit Standard</value>
+  </data>
+  <data name="Standard_Index" xml:space="preserve">
+    <value>Standard</value>
+  </data>
+  <data name="SubIndicatorsPanel_Index" xml:space="preserve">
+    <value>Sub Indicators Panel</value>
+  </data>
+  <data name="SystemAdministration" xml:space="preserve">
+    <value>System Administration</value>
+  </data>
+  <data name="UserCategory_Add" xml:space="preserve">
+    <value>Add User Category</value>
+  </data>
+  <data name="UserCategory_Edit" xml:space="preserve">
+    <value>Edit User Category</value>
+  </data>
+  <data name="UserCategory_Index" xml:space="preserve">
+    <value>Manage User Category</value>
+  </data>
+  <data name="UserInfo" xml:space="preserve">
+    <value>User Information</value>
+  </data>
+  <data name="UserInfo_Certificates" xml:space="preserve">
+    <value>Certificates</value>
+  </data>
+  <data name="UserInfo_Courses" xml:space="preserve">
+    <value>Courses</value>
+  </data>
+  <data name="UserInfo_MyInfo" xml:space="preserve">
+    <value>My Information</value>
+  </data>
+  <data name="UserInfo_Qualifications" xml:space="preserve">
+    <value>Qualifications</value>
+  </data>
+  <data name="UserManagment" xml:space="preserve">
+    <value>User Managment</value>
+  </data>
+  <data name="UserUnit" xml:space="preserve">
+    <value>User Units</value>
+  </data>
+  <data name="User_Add" xml:space="preserve">
+    <value>Add User</value>
+  </data>
+  <data name="User_Edit" xml:space="preserve">
+    <value>Edit User</value>
+  </data>
+  <data name="User_Index" xml:space="preserve">
+    <value>Manage User</value>
+  </data>
+  <data name="WorkPlanning" xml:space="preserve">
+    <value>Work Planning</value>
+  </data>
+</root>

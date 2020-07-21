@@ -1,0 +1,65 @@
+﻿@using ACT.ViewModel;
+@model CertificatesAndAwardViewModel
+@{
+    var ajaxOptions = new AjaxOptions
+    {
+        OnBegin = "onFormBegin",
+        OnComplete = "onFormComplete",
+        HttpMethod = "POST"
+    };
+}
+
+@using (Ajax.BeginForm(null, null, ajaxOptions, new { enctype = "multipart/form-data" }))
+{
+    <div class="portlet">
+        <div class="portlet-title">
+            <div class="actions btn-set">
+                <a href="@Url.Action("Index")" class="btn default"><i class="fa fa-reply"></i> رجوع </a>
+                <button type="submit" class="btn  green"><i class="fa fa-check"></i> حفظ</button>
+            </div>
+        </div>
+        <div class="portlet-body form">
+            <div class="form-body">
+                <div class="form-group row">
+                    @Html.LabelFor(model => model.Name, new { @class = "control-label col-md-2" })
+                    <div class="col-md-4">
+                        @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                        @Html.ValidationMessageFor(model => model.Name)
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    @Html.LabelFor(model => model.Source, new { @class = "control-label col-md-2" })
+                    <div class="col-md-4">
+                        @Html.EditorFor(model => model.Source, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                        @Html.ValidationMessageFor(model => model.Source)
+                    </div>
+                </div>
+
+     
+
+                <div class="form-group row">
+                    @Html.LabelFor(model => model.DateOfCertificate, new { @class = "control-label col-md-2" })
+                    <div class="col-md-4">
+                        <div class="input-group date  date-picker">
+                            @Html.EditorFor(model => model.DateOfCertificate, new { htmlAttributes = new { @class = "form-control ", @readonly = "" } })
+                            <span class="input-group-btn">
+                                <button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
+                            </span>
+                        </div>
+                        @Html.ValidationMessageFor(model => model.DateOfCertificate)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+
+
+@section scripts
+{
+    <script>
+        var returnUrl = "@Url.Action("Index")";
+    </script>
+}

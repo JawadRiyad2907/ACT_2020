@@ -1,0 +1,61 @@
+﻿@using ACT.ViewModel;
+@model DirectResponsibleViewModel
+
+
+<div class="note note-info ">
+    <p>
+        <i class="fa-lg fa fa-warning"></i>
+        من خلال هذه الشاشة يتم تحديد المسؤول المباشر للمستويات الاقل من مستواك.
+    </p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        @Html.Action("UserLevelInfo", "User", new { Area = "UsersManagement", ShowCategory = false, ShowJobTitle = false })
+        @Html.Partial("_SearchPartialView")
+    </div>
+</div>
+
+
+
+
+
+
+<div class="portlet">
+    <div class="portlet-title">
+        <div class="actions btn-set">
+        </div>
+    </div>
+    <div class="portlet-body">
+        <table class="table table-striped table-bordered table-hover" id="grid-object">
+            <thead>
+                <tr class="heading">
+                    <th>
+                        @Html.DisplayNameFor(x => x.LevelName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(x => x.ResponsibleName)
+                    </th>
+                    <th>
+                    </th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+
+
+
+
+
+
+
+@section scripts {
+    <script>
+        var GridUrl = "@Url.Action("GetDirectResponsible")";
+         var DeleteUrl = "@Url.Action("Delete")";
+        var EditUrl = "@Url.Action("Edit")";
+        var withoutResponsibleLoc = "@Resources.LocalizedText.WithoutResponsible";
+    </script>
+    <script src="~/Scripts/DirectResponsible/data-table.js"></script>
+}

@@ -1,0 +1,24 @@
+﻿@section Styles
+{
+    <link href="~/assets/global/plugins/jstree/dist/themes/default/style.min.css" rel="stylesheet" />
+}
+<div class="portlet">
+    <div class="portlet-title">
+        <div class="actions btn-set">
+            <a href="@Url.Action("Index","JobTitle",new {Area="SystemManagment" })" class="btn default"><i class="fa fa-reply"></i> @Resources.LocalizedText.Back </a>
+            <button type="submit" class="btn  green add-privlages"><i class="fa fa-check"></i> @Resources.LocalizedText.Save</button>
+        </div>
+    </div>
+
+    @Html.Partial("_TreePartial")
+</div>
+@section Scripts{
+    <!--Tree Script-->
+    <script src="~/assets/global/plugins/jstree/dist/jstree.min.js"></script>
+    <script src="~/Scripts/Privelags/privelage.js"></script>
+    <script>
+        var menuPrivelageUrl = '@Url.Action("JobTitleTree", new { Id = ViewBag.JobTitle })';
+        var savePrivelageUrl = '@Url.Action("SaveJobTitle", new { Id = ViewBag.JobTitle })';
+        var returnUrl = '@Url.Action("Index", "JobTitle", new { Area = "SystemManagment" })';
+    </script>
+}

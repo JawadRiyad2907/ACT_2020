@@ -1,0 +1,28 @@
+﻿@using ACT.ViewModel;
+@{
+    var PageBarList = ViewBag.PageBar as List<PageBarViewModel>;
+}
+<div class="page-bar">
+    <ul class="page-breadcrumb">
+        @if (PageBarList != null && PageBarList.Count > 0)
+        {
+
+            foreach (var item in PageBarList.OrderBy(x => x.Order))
+            {
+                <li>
+                    @if (item.IsFirst)
+                    {
+                        <i class="fa fa-home"></i>
+                    }
+                    <a href="javascript:;">@item.Description</a>
+                    @if (!item.IsLast)
+                    {
+                        <i class="fa fa-angle-left"></i>
+                    }
+                </li>
+            }
+
+        }
+    </ul>
+</div>
+

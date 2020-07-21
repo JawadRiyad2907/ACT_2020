@@ -1,0 +1,36 @@
+﻿@using ACT.ViewModel;
+@model BaseUsersResponsibleForMeViewModel
+
+
+<div class="form-group row">
+    @Html.LabelFor(model => model.LevelName, new { @class = "control-label col-md-3" })
+    <div class="col-md-9">
+        @Html.TextBoxFor(model => model.LevelName, new { @class = "form-control input-sm", @Readonly = "", @Value = User.LevelResponsibleForMe.LevelName })
+    </div>
+</div>
+
+
+<div class="form-group row">
+    <label class="control-label col-md-3" for="SearchUserCategory">@Html.DisplayNameFor(model => model.UserCategoryId)</label>
+    <div class="col-md-9">
+        <select id="SearchUserCategory" class="form-control input-sm select2me">
+            <option value="">@Resources.LocalizedText.DropDownnPleaseSelect</option>
+        </select>
+    </div>
+</div>
+<div class="form-group row">
+    <label class="control-label col-md-3" for="SearchJobTitle">@Html.DisplayNameFor(model => model.JobTitleId)</label>
+    <div class="col-md-9">
+        <select id="SearchJobTitle" class="form-control input-sm select2me">
+            <option value="">@Resources.LocalizedText.DropDownnPleaseSelect</option>
+        </select>
+    </div>
+</div>
+<div class="form-group row">
+    <label class="control-label col-md-3" for="SearchUser">@Html.DisplayNameFor(model => model.UserId)</label>
+    <div class="col-md-9">
+        <select id="SearchUser" class="form-control input-sm select2me">
+            <option value="">@Resources.LocalizedText.DropDownnPleaseSelect</option>
+        </select>
+    </div>
+</div>

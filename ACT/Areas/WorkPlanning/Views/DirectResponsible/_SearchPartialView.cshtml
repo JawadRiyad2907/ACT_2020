@@ -1,0 +1,23 @@
+﻿@using ACT.ViewModel;
+@model DirectResponsibleViewModel
+
+
+<div class="form-group row">
+    <label class="control-label col-md-3" for="SearchLevelName">@Html.DisplayNameFor(x => x.LevelName)</label>
+    <div class="col-md-9">
+        <input class="form-control input-sm text-box single-line" id="SearchLevelName" type="text" value="">
+    </div>
+</div>
+<div class="form-group row">
+    <label class="control-label col-md-3" for="SearchResponsibleName">@Html.DisplayNameFor(x => x.ResponsibleName)</label>
+    <div class="col-md-9">
+        <input class="form-control input-sm text-box single-line" id="SearchResponsibleName" type="text" value="">
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <a id="search-btn" onclick="SearchDataTable();" class="btn  yellow filter-submit margin-bottom  pull-right"><i class="fa fa-search"></i> بحث</a>
+    </div>
+</div>
+
+

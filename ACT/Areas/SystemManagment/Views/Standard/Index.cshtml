@@ -1,0 +1,70 @@
+﻿@using ACT.ViewModel;
+@model StandardViewModel
+
+@Html.Hidden("SearchItemId", (decimal)ViewBag.ItemId)
+@Html.Hidden("SearchCategoryId", (decimal)ViewBag.CategoryId)
+<div class="row">
+    <div class="col-md-4">
+        @Html.Action("ViewCategoryAndItem", new { ItemId = (decimal)ViewBag.ItemId, CategoryId = (decimal)ViewBag.CategoryId })
+        @Html.Partial("_SearchPartialView")
+    </div>
+</div>
+<div class="portlet">
+    <div class="portlet-title">
+        <div class="actions btn-set">
+            <a href="@Url.Action("Index","Item",new { area="SystemManagment",SearchSelectedCategoryId=ViewBag.CategoryId })" class="btn default"><i class="fa fa-reply"></i> رجوع الى البنود </a>
+            <a href="@Url.Action("Add",new {ItemId=ViewBag.ItemId,CategoryId=ViewBag.CategoryId })" class="btn default yellow-stripe">
+                <i class="fa fa-plus"></i>
+                <span class="hidden-480">
+                    اضافة جديد
+                </span>
+            </a>
+
+        </div>
+    </div>
+    <div class="portlet-body">
+        <table class="table table-striped table-bordered table-hover" id="grid-object">
+            <thead>
+                <tr class="heading">
+                    <th>
+                        @Html.DisplayNameFor(x => x.Name)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(x => x.Weight)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(x => x.DisplayOrder)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(x => x.Publish)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(x => x.Evidences)
+                    </th>
+                    <th>
+                    </th>
+                    <th>
+                    </th>
+                    <th>
+                    </th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+
+
+
+
+
+
+
+@section scripts {
+    <script>
+        var GridUrl = "@Url.Action("GetStandardList")";
+        var DeleteUrl = "@Url.Action("Delete")";
+        var EditUrl = "@Url.Action("Edit")";
+        var EvidenceUrl="@Url.Action("Index", "Evidence")";
+    </script>
+    <script src="~/Scripts/Standard/Index.js"></script>
+}

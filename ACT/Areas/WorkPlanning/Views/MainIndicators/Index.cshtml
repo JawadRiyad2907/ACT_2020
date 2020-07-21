@@ -1,0 +1,35 @@
+﻿
+
+<div class="row">
+    <div class="col-md-5">
+        @Html.Partial("~/Views/Common/_UsersResponsibleForMe.cshtml")
+        <div class="row">
+            <div class="col-md-12">
+                <a id="search-btn" onclick="SearchItemTable();" class="btn  yellow filter-submit margin-bottom  pull-right"><i class="fa fa-search"></i> بحث</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="portlet">
+    <div class="portlet-title">
+
+    </div>
+    <div class="portlet-body item-table">
+
+    </div>
+</div>
+
+
+
+
+@section scripts {
+    <script>
+        var fillUserCategoryForUserDirectResponsableUrl = "@Url.Action("FillUserCategoryForUserDirectResponsable", "UserCategory", new {Area= "SystemManagment" })";
+        var fillJobTitleForUserDirectResponsableUrl = "@Url.Action("FillJobTitleForUserDirectResponsable", "JobTitle", new {Area= "SystemManagment" })";
+        var fillUsersForUserDirectResponsableUrl = "@Url.Action("FillUsersForUserDirectResponsable", "User", new {Area= "UsersManagement" })";
+        var itemTableUrl = "@Url.Action("ItemTable")";
+    </script>
+    <script src="~/Scripts/Common/users-responsible-for-me.js"></script>
+    <script src="~/Scripts/MainIndicators/index.js"></script>
+}

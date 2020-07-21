@@ -1,0 +1,15 @@
+﻿@using ACT.ViewModel;
+@model StandardViewModel
+
+
+<div class="form-group row">
+    <label class="control-label col-md-3" for="SearchName">@Html.DisplayNameFor(x => x.Name)</label>
+    <div class="col-md-9">
+        <input class="form-control input-sm text-box single-line" id="SearchName" type="text" value="">
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <a id="search-btn" onclick="SearchDataTable();" class="btn  yellow filter-submit margin-bottom  pull-right"><i class="fa fa-search"></i> بحث</a>
+    </div>
+</div>

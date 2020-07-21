@@ -1,0 +1,73 @@
+﻿@model ACT.ViewModel.UserLevelInfoViewModel
+
+
+
+@if (Model.LevelNumber == 0)
+{
+    <div class="form-group row">
+        <label class="control-label col-md-3" for="level0Name">@Resources.LocalizedText.Level0</label>
+        <div class="col-md-9">
+            <input readonly="" class="form-control input-sm" id="level0Name" name="level0Name" type="text" value="@Resources.LocalizedText.Level0">
+        </div>
+    </div>
+}
+
+@if (Model.LevelNumber == 1)
+{
+    <div class="form-group row">
+        @Html.LabelFor(model => model.level1Name, new { @class = "control-label col-md-3" })
+        <div class="col-md-9">
+            @Html.TextBoxFor(model => model.level1Name, new { @class = "form-control input-sm", @Readonly = "" })
+        </div>
+    </div>
+}
+
+@if (Model.LevelNumber == 2)
+{
+    <div class="form-group row">
+        @Html.LabelFor(model => model.level2Name, new { @class = "control-label col-md-3" })
+        <div class="col-md-9">
+            @Html.TextBoxFor(model => model.level2Name, new { @class = "form-control input-sm", @Readonly = "" })
+        </div>
+    </div>
+}
+@if (Model.LevelNumber == 3)
+{
+    <div class="form-group row">
+        @Html.LabelFor(model => model.level3Name, new { @class = "control-label col-md-3" })
+        <div class="col-md-9">
+            @Html.TextBoxFor(model => model.level3Name, new { @class = "form-control input-sm", @Readonly = "" })
+        </div>
+    </div>
+}
+@if (Model.LevelNumber == 4)
+{
+    <div class="form-group row">
+        @Html.LabelFor(model => model.level4Name, new { @class = "control-label col-md-3" })
+        <div class="col-md-9">
+            @Html.TextBoxFor(model => model.level4Name, new { @class = "form-control input-sm", @Readonly = "" })
+        </div>
+    </div>
+}
+
+
+@if (Model.ShowCategory)
+{
+    <div class="form-group row">
+        @Html.LabelFor(model => model.CategoryName, new { @class = "control-label col-md-3" })
+        <div class="col-md-9">
+            @Html.TextBoxFor(model => model.CategoryName, new { @class = "form-control input-sm", @Readonly = "" })
+        </div>
+    </div>
+}
+@if (Model.ShowJobTitle)
+{
+    <div class="form-group row">
+        @Html.LabelFor(model => model.JobName, new { @class = "control-label col-md-3" })
+        <div class="col-md-9">
+            @Html.TextBoxFor(model => model.JobName, new { @class = "form-control input-sm", @Readonly = "" })
+        </div>
+    </div>
+}
+
+

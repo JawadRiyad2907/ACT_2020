@@ -1,0 +1,76 @@
+﻿@using ACT.ViewModel
+@model StandardViewModel
+@{
+    var ajaxOptions = new AjaxOptions
+    {
+        OnBegin = "onFormBegin",
+        OnComplete = "onFormComplete",
+        HttpMethod = "POST"
+    };
+}
+
+@using (Ajax.BeginForm(null, null, ajaxOptions, new { enctype = "multipart/form-data" }))
+{
+
+    @Html.HiddenFor(x => x.Id)
+    @Html.HiddenFor(x => x.ItemId)
+    @Html.HiddenFor(x => x.CategoryId)
+    <div class="portlet">
+        <div class="portlet-title">
+            <div class="actions btn-set">
+                <a href="@Url.Action("Index",new {ItemId=Model.ItemId,CategoryId = Model.CategoryId })" class="btn default"><i class="fa fa-reply"></i> رجوع </a>
+                <button type="submit" class="btn  green"><i class="fa fa-check"></i> حفظ</button>
+            </div>
+        </div>
+        <div class="portlet-body form">
+            <div class="form-body">
+
+
+                <div class="row">
+                    <div class="col-md-4">
+                        @Html.Action("ViewCategoryAndItem", new { ItemId = Model.ItemId, CategoryId = Model.CategoryId })
+                        <div class="form-group row">
+                            @Html.LabelFor(model => model.Name, new { @class = "control-label col-md-3" })
+                            <div class="col-md-9">
+                                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                                @Html.ValidationMessageFor(model => model.Name)
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            @Html.LabelFor(model => model.Weight, new { @class = "control-label col-md-3" })
+                            <div class="col-md-9">
+                                @Html.EditorFor(model => model.Weight, new { htmlAttributes = new { @class = "touchspin_number form-control  input-sm" } })
+                                @Html.ValidationMessageFor(model => model.Weight)
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            @Html.LabelFor(model => model.DisplayOrder, new { @class = "control-label col-md-3" })
+                            <div class="col-md-9">
+                                @Html.EditorFor(model => model.DisplayOrder, new { htmlAttributes = new { @class = "touchspin_number form-control  input-sm" } })
+                                @Html.ValidationMessageFor(model => model.DisplayOrder)
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            @Html.LabelFor(model => model.Publish, new { @class = "control-label col-md-3" })
+                            <div class="col-md-9">
+                                @Html.CheckBoxFor(model => model.Publish, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                                @Html.ValidationMessageFor(model => model.Publish)
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+
+
+@section scripts
+{
+    <script>
+         var returnUrl = "@Html.Raw(Url.Action("Index",new {ItemId=Model.ItemId,CategoryId = Model.CategoryId }))";
+    </script>
+}

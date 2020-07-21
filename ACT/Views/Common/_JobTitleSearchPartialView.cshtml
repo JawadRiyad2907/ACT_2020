@@ -1,0 +1,56 @@
+﻿@using ACT.ViewModel;
+@model BaseJobTitleViewModel
+
+
+<div class="form-group row">
+    <label class="control-label col-md-1" for="SearchLevel1">@Html.DisplayNameFor(model => model.Level1Id)</label>
+    <div class="col-md-3">
+        <select id="SearchLevel1" class="form-control input-sm select2me ">
+            <option value="">@Resources.LocalizedText.DropDownnPleaseSelect</option>
+        </select>
+    </div>
+</div>
+
+<div class="form-group row">
+    <label class="control-label col-md-1" for="SearchLevel2">@Html.DisplayNameFor(model => model.Level2Id)</label>
+    <div class="col-md-3">
+        <select id="SearchLevel2" class="form-control input-sm select2me">
+            <option value="">@Resources.LocalizedText.DropDownnPleaseSelect</option>
+        </select>
+    </div>
+</div>
+
+<div class="form-group row">
+    <label class="control-label col-md-1" for="SearchLevel3">@Html.DisplayNameFor(model => model.Level3Id)</label>
+    <div class="col-md-3">
+        <select id="SearchLevel3" class="form-control input-sm select2me">
+            <option value="">@Resources.LocalizedText.DropDownnPleaseSelect</option>
+        </select>
+    </div>
+</div>
+
+<div class="form-group row">
+    <label class="control-label col-md-1" for="SearchLevel4">@Html.DisplayNameFor(model => model.Level4Id)</label>
+    <div class="col-md-3">
+        <select id="SearchLevel4" class="form-control input-sm select2me">
+            <option value="">@Resources.LocalizedText.DropDownnPleaseSelect</option>
+        </select>
+    </div>
+</div>
+
+<div class="form-group row">
+    <label class="control-label col-md-1" for="SearchUserCategory">@Html.DisplayNameFor(model => model.UserCategoryId)</label>
+    <div class="col-md-3">
+        <select id="SearchUserCategory" class="form-control input-sm select2me">
+            <option value="">@Resources.LocalizedText.DropDownnPleaseSelect</option>
+        </select>
+    </div>
+</div>
+<div class="form-group row">
+    <label class="control-label col-md-1" for="SearchJobTitle">@Html.DisplayNameFor(model => model.JobTitleId)</label>
+    <div class="col-md-3">
+        <select id="SearchJobTitle" class="form-control input-sm select2me">
+            <option value="">@Resources.LocalizedText.DropDownnPleaseSelect</option>
+        </select>
+    </div>
+</div>

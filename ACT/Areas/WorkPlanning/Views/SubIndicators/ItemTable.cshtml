@@ -1,0 +1,202 @@
+﻿@model ACT.ViewModel.SubIndicatorsViewModel
+
+
+<div class="portlet">
+    <div class="portlet-title">
+        @if (Model != null)
+        {
+            decimal? NextItemId = Model.NextItem == null ? null : Model.NextItem.ItemId;
+            decimal? PreviousItemId = Model.PreviousItem == null ? null : Model.PreviousItem.ItemId;
+
+
+
+            <div class="actions">
+                <div class="btn-group" data-toggle="buttons">
+                    <a href="#" @(Model.PreviousItem == null ? "disabled" : "" ) class="btn grey btn-sm margin-right-10" onclick="SearchItemTable('@PreviousItemId')">
+                        <i class="fa fa-arrow-right"></i> @Resources.LocalizedText.SubIndicators_PreviousItem
+                    </a>
+                    <a href="#" @(Model.NextItem == null ? "disabled" : "" ) onclick="SearchItemTable('@NextItemId')" class="btn grey btn-sm margin-right-10">
+                        @Resources.LocalizedText.SubIndicators_NextItem <i class="fa fa-arrow-left"></i>
+                    </a>
+                </div>
+            </div>
+
+        }
+    </div>
+    <div class="portlet-body overflow-x-auto portlet-body-item">
+        @if (Model == null)
+        {
+            <div class="note note-danger">
+                <p>
+                    @Resources.LocalizedText.PleaseSelectCategory
+                </p>
+            </div>
+        }
+        else
+        {
+
+            if (Model.IsNaItem)
+            {
+                <div class="note note-danger">
+                    <p>
+                        <i class="fa-lg fa fa-warning"></i>
+                        @Resources.LocalizedText.ItemNaForTargetCategory
+                    </p>
+                </div>
+            }
+
+            @Html.Hidden("TargetCategory", Model.TargetCategory)
+            int CategoryCount = Model.userCategories.Count;
+            <table class="table table-striped table-bordered table-hover" id="grid-object">
+                <thead>
+                    <tr>
+                        <th class="center bg-blue-dark" colspan="@(CategoryCount +5)">
+
+                            <h4>
+                                @Resources.LocalizedText.SubIndicatorsForItem
+                                @Model.ItemName
+                            </h4>
+                        </th>
+                    </tr>
+                    <tr class="heading">
+                        <th class="width-300" colspan="2">
+                            <div class="row-span-m ">@Resources.LocalizedText.SubIndicators_Header1</div>
+                        </th>
+                        <th class="rotate-th">
+                            <div class="header-rotate-m">@Resources.LocalizedText.SubIndicators_Weight</div>
+                        </th>
+                        <th class="rotate-th">
+                            <div class="header-rotate-m" style="width:12px;">@Resources.LocalizedText.SubIndicators_TargetCategories</div>
+                        </th>
+
+                        @foreach (var cat in Model.userCategories)
+                        {
+                            <th class="rotate-th">
+                                <div class="header-rotate-m">
+                                    <span class="label label-success">
+                                        @cat.Name
+                                    </span>
+                                </div>
+                            </th>
+                        }
+
+                    </tr>
+                    <tr class="heading">
+                        <th class="width-300" rowspan="2" colspan="2">
+
+
+                        </th>
+                        <th rowspan="2">
+
+
+                        </th>
+                        <th rowspan="2">
+
+
+                        </th>
+
+
+                        @foreach (var cat in Model.userCategories)
+                        {
+                            <th rowspan="2">
+
+                            </th>
+                        }
+
+
+
+
+
+                    </tr>
+                </thead>
+                <tbody @(Model.IsNaItem ? "class=disabled-any" : "")>
+                    @{
+                        bool IsFirstRecord = true;
+                        int StandardIndex = 1;
+                    }
+
+                    @if (Model.standardSubIndicators == null || Model.standardSubIndicators.Count == 0)
+                    {
+                        <tr>
+                            <td class="dataTables_empty" colspan="@(CategoryCount +5)">
+                                @Resources.LocalizedText.SubIndicators_NoStandardsForThisItem
+                            </td>
+                        </tr>
+                    }
+                    @if (CategoryCount != 0)
+                    {
+
+                        foreach (var st in Model.standardSubIndicators)
+                        {
+                            <tr>
+                                <td>
+                                    @Model.SectorId/ @Model.ItemId/ @StandardIndex
+                                </td>
+                                <td>
+                                    @st.StandardName
+                                </td>
+                                <td>
+                                    <a data-pk="@st.StandardId" data-url="@Url.Action("EditStandardWeight",new {TargetCategory=Model.TargetCategory,StandardId=st.StandardId })" class="Standard_Weight" href="#" id="Standard_Weight"
+                                       data-value="@st.Weight"
+                                       data-placement="right">
+                                        @st.Weight
+                                    </a>
+                                </td>
+                                @if (IsFirstRecord)
+                                {
+                                    <td rowspan="10" class="rotate-td">
+                                        <div class="item-hash-rotate">
+                                            @Resources.LocalizedText.TargetValue
+                                        </div>
+                                    </td>
+                                }
+
+
+                                @foreach (var catSub in Model.userCategories)
+                                {
+                                    var subForCategory = st.subIndicatorsCategories.Where(x => x.categoryId == catSub.Id).FirstOrDefault();
+                                    <td>
+                                        @if (subForCategory != null)
+                                        {
+                                            <a data-pk="@subForCategory.Id" data-url="@Url.Action("EditEditQuantity")" class="Standard_Quantity" href="#" id="Standard_Quantity"
+                                               data-value="{IsContinuous:'@subForCategory.IsContinuous',Quantity:'@subForCategory.Quantity',CategoryId: '@catSub.Id',ItemId: '@Model.ItemId',StandardId: '@st.StandardId'}"
+                                               data-type="standardQuantity" data-placement="right">
+                                            </a>
+                                        }
+                                        else
+                                        {
+                                            <a data-pk="0" data-url="@Url.Action("AddQuantity")" class="Standard_Quantity" href="#" id="Standard_Quantity"
+                                               data-value="{IsContinuous:'',Quantity:'',CategoryId: '@catSub.Id',ItemId: '@Model.ItemId',StandardId: '@st.StandardId'}"
+                                               data-type="standardQuantity" data-placement="right">
+                                            </a>
+                                        }
+                                    </td>
+                                }
+                            </tr>
+                            IsFirstRecord = false;
+                            StandardIndex++;
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td class="dataTables_empty" colspan="5">
+
+                                @Resources.LocalizedText.SubIndicators_RelatedCategoriesEmpty
+                            </td>
+                        </tr>
+                    }
+
+
+                </tbody>
+            </table>
+        }
+    </div>
+</div>
+
+
+
+
+
+
+

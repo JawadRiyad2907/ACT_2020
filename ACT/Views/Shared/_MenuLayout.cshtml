@@ -1,0 +1,89 @@
+﻿@model IList<ACT.Models.Menu>
+@{
+
+    var MenuLevel1 = Model.Where(x => x.ParentId.Equals(null));
+    var MenuLevel1Code = MenuLevel1.Select(x => x.Id);
+
+    var MenuLevel2 = Model.Where(x => x.ParentId.HasValue && MenuLevel1Code.Contains(x.ParentId.Value));
+    var MenuLevel2Code = MenuLevel2.Select(x => x.Id);
+
+    var MenuLevel3 = Model.Where(x => x.ParentId.HasValue && MenuLevel2Code.Contains(x.ParentId.Value));
+
+
+
+}
+
+
+
+
+
+<div class="col-md-8">
+    <div class="hor-menu hidden-sm hidden-xs">
+        <ul class="nav navbar-nav">
+            @foreach (var First in MenuLevel1)
+            {
+                if (First.Url != null)
+                {
+                    <li class="classic-menu-dropdown">
+                        <a href="@(First.Url??"javascript:;")">
+                            <i class="@First.CssClass"></i>  @First.DescriptionAr
+                        </a>
+                    </li>
+                }
+                else
+                {
+                    <li class="classic-menu-dropdown">
+                        <a data-toggle="dropdown" href="javascript:;" data-hover="megamenu-dropdown" data-close-others="true">
+                            <i class="@First.CssClass"></i>    @First.DescriptionAr  <i class="fa fa-angle-down"></i>
+                        </a>
+                        <ul class="dropdown-menu pull-left">
+                            @foreach (var secound in MenuLevel2.Where(x => x.ParentId == First.Id))
+                            {
+                                if (secound.Url != null)
+                                {
+                                    <li>
+                                        <a href="@(secound.Url??"javascript:;")">
+                                            <i class="@secound.CssClass"></i>     @secound.DescriptionAr
+                                        </a>
+                                    </li>
+                                }
+                                else
+                                {
+                                    <li class="dropdown-submenu">
+                                        <a href="@(secound.Url??"javascript:;")">
+                                            <i class="@secound.CssClass"></i>    @secound.DescriptionAr
+                                        </a>
+                                        <ul class="dropdown-menu">
+
+                                            @foreach (var third in MenuLevel3.Where(x => x.ParentId == secound.Id))
+                                            {
+                                                <li>
+                                                    <a href="@(third.Url??"javascript:;")">
+                                                        <i class="@third.CssClass"></i>    @third.DescriptionAr
+                                                    </a>
+                                                </li>
+                                            }
+                                        </ul>
+                                    </li>
+                                }
+                            }
+                        </ul>
+                    </li>
+
+                }
+            }
+        </ul>
+    </div>
+</div>
+
+@Html.Action("RightMenu", "Menu", new { Area = "" })
+
+
+
+
+
+
+
+
+
+

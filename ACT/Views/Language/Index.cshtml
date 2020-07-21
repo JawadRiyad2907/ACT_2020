@@ -1,0 +1,51 @@
+﻿
+<div class="portlet">
+    <div class="portlet-title">
+        <div class="actions btn-set">
+            <a href="@Url.Action("Add")" class="btn default yellow-stripe">
+                <i class="fa fa-plus"></i>
+                <span class="hidden-480">
+                    اضافة جديد
+                </span>
+            </a>
+        </div>
+    </div>
+    <div class="portlet-body">
+        <table class="table table-striped table-bordered table-hover" id="grid-object">
+            <thead>
+                <tr class="heading">
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        LanguageCulture
+                    </th>
+                    <th>
+                        DisplayOrder
+                    </th>
+                    <th>
+                        Published
+                    </th>
+                    <th>
+                        Rtl
+                    </th>
+                    <th>
+                    </th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+
+
+
+
+
+
+
+@section scripts {
+    <script>
+        var GridUrl = "@Url.Action("GetLanguagesList")";
+    </script>
+    <script src="~/Scripts/Language/Index.js"></script>
+}

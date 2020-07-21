@@ -1,0 +1,56 @@
+﻿@using ACT.ViewModel;
+@{
+
+    var SearchSelected = (ViewBag.SearchSelected as BaseCategoryViewModel);
+}
+
+
+
+
+
+<div class="row">
+    <div class="col-md-5">
+        @Html.Partial("~/Views/Common/_UserCategorySearchPartialView.cshtml")
+    </div>
+
+</div>
+
+<div class="row">
+    <div class="col-md-5">
+        <a id="search-btn" onclick="SearchItemTable();" class="btn  yellow filter-submit margin-bottom  pull-right"><i class="fa fa-search"></i> بحث</a>
+    </div>
+</div>
+
+<div class="portlet">
+    <div class="portlet-title">
+
+    </div>
+    <div class="portlet-body item-table">
+
+    </div>
+</div>
+
+
+
+
+@section scripts {
+    <script>
+        var EditNAUrl = "@Url.Action("EditNA")";
+        var fillLevel1Url = "@Url.Action("FillLevel1","Level1",new {Area="Level" })";
+        var fillLevel2Url = "@Url.Action("FillLevel2","Level2",new {Area="Level" })";
+        var fillLevel3Url = "@Url.Action("FillLevel3","Level3",new {Area="Level" })";
+        var fillLevel4Url = "@Url.Action("FillLevel4","Level4",new {Area="Level" })";
+        var fillUserCategoryUrl = "@Url.Action("FillUserCategory", "UserCategory", new {Area= "SystemManagment" })";
+        var itemTableUrl = "@Url.Action("ItemTable")";
+
+       //selected search level and category
+
+        var SearchSelectedLevel1 = '@((int?)SearchSelected.Level1Id)';
+        var SearchSelectedLevel2 = '@((int?)SearchSelected.Level2Id)';
+        var SearchSelectedLevel3 = '@((int?)SearchSelected.Level3Id)';
+        var SearchSelectedLevel4 = '@((int?)SearchSelected.Level4Id)';
+        var SearchSelectedCategoryId = '@((int?)SearchSelected.UserCategoryId)';
+    </script>
+    <script src="~/Scripts/Common/user-category-search.js"></script>
+    <script src="~/Scripts/Item/index.js"></script>
+}

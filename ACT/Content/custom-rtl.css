@@ -1,0 +1,12 @@
+.page-header.navbar .hor-menu .navbar-nav > li > a {
+    font-size: 13px;
+}
+
+    .page-header.navbar .hor-menu .navbar-nav > li > a > i {
+        font-size: 13px;
+    }
+.page-header.navbar
+{
+
+    height:unset !important;
+}

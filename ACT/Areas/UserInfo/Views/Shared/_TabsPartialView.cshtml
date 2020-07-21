@@ -1,0 +1,24 @@
+﻿@model string
+
+<ul class="nav nav-tabs">
+    <li class="@(Model=="basic"?"active":"")">
+        <a href="@Url.Action("Index","MyInfo",new {Area="UserInfo" })">
+            @Resources.PageTitle.UserInfo_MyInfo
+        </a>
+    </li>
+    <li class="@(Model=="qualifications"?"active":"")">
+        <a href="@Url.Action("Index","Qualifications",new {Area="UserInfo" })">
+            @Resources.PageTitle.UserInfo_Qualifications
+        </a>
+    </li>
+    <li class="@(Model=="course"?"active":"")">
+        <a href="@Url.Action("Index","Course",new {Area="UserInfo" })">
+            @Resources.PageTitle.UserInfo_Courses
+        </a>
+    </li>
+    <li class="@(Model=="certificates"?"active":"")">
+        <a href="@Url.Action("Index","CertificatesAndAward",new {Area="UserInfo" })">
+            @Resources.PageTitle.UserInfo_Certificates
+        </a>
+    </li>
+</ul>

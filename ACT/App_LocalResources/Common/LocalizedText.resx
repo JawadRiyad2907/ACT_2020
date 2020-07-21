@@ -1,0 +1,727 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="emptyTable" xml:space="preserve">
+    <value>No data available</value>
+  </data>
+  <data name="Level1DisplayOrder" xml:space="preserve">
+    <value>Display Order</value>
+  </data>
+  <data name="Level1IsDefault" xml:space="preserve">
+    <value>Is Default</value>
+  </data>
+  <data name="Level1MinistryName" xml:space="preserve">
+    <value>Ministry Name</value>
+  </data>
+  <data name="Level1Name" xml:space="preserve">
+    <value>Level1 Name</value>
+  </data>
+  <data name="Level1Published" xml:space="preserve">
+    <value>Published</value>
+  </data>
+  <data name="Level1ThreeLetterIsoCode" xml:space="preserve">
+    <value>Country Code English</value>
+  </data>
+  <data name="loadingRecords" xml:space="preserve">
+    <value>loadingRecords</value>
+  </data>
+  <data name="zeroRecords" xml:space="preserve">
+    <value>zeroRecords</value>
+  </data>
+  <data name="Validation_Required" xml:space="preserve">
+    <value>The {0} field is required.</value>
+  </data>
+  <data name="Validation_StringLength" xml:space="preserve">
+    <value>Maximum length  is {1} characters</value>
+  </data>
+  <data name="Validation_EnglishChar" xml:space="preserve">
+    <value>Only English characters</value>
+  </data>
+  <data name="Error_ProcessRequest" xml:space="preserve">
+    <value>An error occurred while processing your request ,
+Please Try Again later</value>
+  </data>
+  <data name="successOkButton" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="successText" xml:space="preserve">
+    <value>Saved Success</value>
+  </data>
+  <data name="successTitle" xml:space="preserve">
+    <value>Success</value>
+  </data>
+  <data name="unsuccessOkButton" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="unsuccessText" xml:space="preserve">
+    <value>Save Failed</value>
+  </data>
+  <data name="unsuccessTitle" xml:space="preserve">
+    <value>Failed</value>
+  </data>
+  <data name="deleteCancelButton" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="deleteOkButton" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="deleteTitle" xml:space="preserve">
+    <value>Are you sure to delete ?</value>
+  </data>
+  <data name="successDelete" xml:space="preserve">
+    <value>Deleted Successfully</value>
+  </data>
+  <data name="unsuccessDelete" xml:space="preserve">
+    <value>Deleted  Failed</value>
+  </data>
+  <data name="DeletedItemNotFound" xml:space="preserve">
+    <value>Deleted Item Not Found</value>
+  </data>
+  <data name="TotalRecord" xml:space="preserve">
+    <value>Records</value>
+  </data>
+  <data name="Level2DisplayOrder" xml:space="preserve">
+    <value>Display Order</value>
+  </data>
+  <data name="Level2IsDefault" xml:space="preserve">
+    <value>Is Default</value>
+  </data>
+  <data name="Level2Level1" xml:space="preserve">
+    <value>Level 1 Name</value>
+  </data>
+  <data name="Level2Name" xml:space="preserve">
+    <value>Level2 Name</value>
+  </data>
+  <data name="Level2Published" xml:space="preserve">
+    <value>Published</value>
+  </data>
+  <data name="Level2Level1Name" xml:space="preserve">
+    <value>Level 1 Name</value>
+  </data>
+  <data name="Level2LevelMinistryName" xml:space="preserve">
+    <value>Level 1 MinistryName</value>
+  </data>
+  <data name="DropDownnPleaseSelect" xml:space="preserve">
+    <value>-- Please Select --</value>
+  </data>
+  <data name="Level3DisplayOrder" xml:space="preserve">
+    <value>Display Order</value>
+  </data>
+  <data name="Level3IsDefault" xml:space="preserve">
+    <value>Is Default</value>
+  </data>
+  <data name="Level3Level1" xml:space="preserve">
+    <value>Level 1 Name</value>
+  </data>
+  <data name="Level3Level1Name" xml:space="preserve">
+    <value>Level 1 Name</value>
+  </data>
+  <data name="Level3Level2Name" xml:space="preserve">
+    <value>Level2 Name</value>
+  </data>
+  <data name="Level3LevelMinistry" xml:space="preserve">
+    <value>Level 1 Ministry</value>
+  </data>
+  <data name="Level3Name" xml:space="preserve">
+    <value>Level3  Name</value>
+  </data>
+  <data name="Level3Published" xml:space="preserve">
+    <value>Published</value>
+  </data>
+  <data name="Level4DisplayOrder" xml:space="preserve">
+    <value>Display Order </value>
+  </data>
+  <data name="Level4IsBasic" xml:space="preserve">
+    <value>Is Basic</value>
+  </data>
+  <data name="Level4IsDefault" xml:space="preserve">
+    <value>Is Default</value>
+  </data>
+  <data name="Level4IsKindergarten" xml:space="preserve">
+    <value>Is Kindergarten</value>
+  </data>
+  <data name="Level4IsMedium" xml:space="preserve">
+    <value>Is Medium</value>
+  </data>
+  <data name="Level4IsMinistryEducation" xml:space="preserve">
+    <value>Is Ministry Education</value>
+  </data>
+  <data name="Level4IsOtherEducation" xml:space="preserve">
+    <value>Is Other Education</value>
+  </data>
+  <data name="Level4IsSecondary" xml:space="preserve">
+    <value>Is Secondary</value>
+  </data>
+  <data name="Level4Level1" xml:space="preserve">
+    <value>Level1</value>
+  </data>
+  <data name="Level4Level2" xml:space="preserve">
+    <value>Level2 </value>
+  </data>
+  <data name="Level4Level3" xml:space="preserve">
+    <value>Level3</value>
+  </data>
+  <data name="Level4Name" xml:space="preserve">
+    <value>Level4 </value>
+  </data>
+  <data name="Level4OtherEducationName" xml:space="preserve">
+    <value>Other Education Name</value>
+  </data>
+  <data name="Level4Published" xml:space="preserve">
+    <value>Published ?</value>
+  </data>
+  <data name="Level4TypeEducationId" xml:space="preserve">
+    <value>Type EducationId</value>
+  </data>
+  <data name="Level4TypeId" xml:space="preserve">
+    <value>TypeId</value>
+  </data>
+  <data name="Level4LevelMinistry" xml:space="preserve">
+    <value>Ministry</value>
+  </data>
+  <data name="Level4ApprovedCurricula" xml:space="preserve">
+    <value>Approved curricula in the  Level 4</value>
+  </data>
+  <data name="Level4Stages" xml:space="preserve">
+    <value>Stages Level 4</value>
+  </data>
+  <data name="UserCategory_Active" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="UserCategory_DisplayOrder" xml:space="preserve">
+    <value>Display Order</value>
+  </data>
+  <data name="UserCategory_Level1Id" xml:space="preserve">
+    <value>Level 1</value>
+  </data>
+  <data name="UserCategory_Level2Id" xml:space="preserve">
+    <value>Level 2</value>
+  </data>
+  <data name="UserCategory_Level3Id" xml:space="preserve">
+    <value>Level 3</value>
+  </data>
+  <data name="UserCategory_Level4Id" xml:space="preserve">
+    <value>Level 4</value>
+  </data>
+  <data name="UserCategory_Name" xml:space="preserve">
+    <value>Category Name</value>
+  </data>
+  <data name="UserCategory_SystemName" xml:space="preserve">
+    <value>Category System Name</value>
+  </data>
+  <data name="UserCategory_LevelName" xml:space="preserve">
+    <value>Level Name</value>
+  </data>
+  <data name="Level3LevelMinistryName" xml:space="preserve">
+    <value>Ministry</value>
+  </data>
+  <data name="DisplayOrder" xml:space="preserve">
+    <value>Display Order</value>
+  </data>
+  <data name="JobTitle_Name" xml:space="preserve">
+    <value>Job Title Name</value>
+  </data>
+  <data name="JobName" xml:space="preserve">
+    <value>Job Name</value>
+  </data>
+  <data name="Error_DeleteAssociated" xml:space="preserve">
+    <value>This item is associated with other data</value>
+  </data>
+  <data name="Common_Level1Id" xml:space="preserve">
+    <value>Level 1</value>
+  </data>
+  <data name="Common_Level2Id" xml:space="preserve">
+    <value>Level 2</value>
+  </data>
+  <data name="Common_Level3Id" xml:space="preserve">
+    <value>Level 3</value>
+  </data>
+  <data name="Common_Level4Id" xml:space="preserve">
+    <value>Level 4</value>
+  </data>
+  <data name="Common_UserCategoryId" xml:space="preserve">
+    <value>User Category</value>
+  </data>
+  <data name="Common_JobTitleId" xml:space="preserve">
+    <value>Job Title</value>
+  </data>
+  <data name="User_Active" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="User_Address" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="User_AnotherPhoneNumber" xml:space="preserve">
+    <value>Another Phone Number</value>
+  </data>
+  <data name="User_Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="User_FirstName" xml:space="preserve">
+    <value>First Name</value>
+  </data>
+  <data name="User_GenderId" xml:space="preserve">
+    <value>GenderId</value>
+  </data>
+  <data name="User_JobTitleName" xml:space="preserve">
+    <value>Job Title </value>
+  </data>
+  <data name="User_LastName" xml:space="preserve">
+    <value>Last Name</value>
+  </data>
+  <data name="User_Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="User_PhoneNumber" xml:space="preserve">
+    <value>PhoneNumber</value>
+  </data>
+  <data name="User_SecondName" xml:space="preserve">
+    <value>Second Name</value>
+  </data>
+  <data name="User_ThirdName" xml:space="preserve">
+    <value>Third Name</value>
+  </data>
+  <data name="User_UserCategoryName" xml:space="preserve">
+    <value>User Category</value>
+  </data>
+  <data name="User_UserName" xml:space="preserve">
+    <value>UserName</value>
+  </data>
+  <data name="Validation_Email" xml:space="preserve">
+    <value>Invalid Email Address</value>
+  </data>
+  <data name="Validation_Number" xml:space="preserve">
+    <value>The {0} field is number only</value>
+  </data>
+  <data name="Validation_IsExists" xml:space="preserve">
+    <value>The {0} field is already exists</value>
+  </data>
+  <data name="Login_Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="Login_Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="Login_RememberMe" xml:space="preserve">
+    <value>RememberMe</value>
+  </data>
+  <data name="Error_AccessDenied" xml:space="preserve">
+    <value>You do not have permission to access this page</value>
+  </data>
+  <data name="UserCategory_Type" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="EnterpriseUnits_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="EnterpriseUnits_DisplayOrder" xml:space="preserve">
+    <value>Display Order</value>
+  </data>
+  <data name="DirectResponsible_LevelName" xml:space="preserve">
+    <value>level</value>
+  </data>
+  <data name="DirectResponsible_ResponsibleName" xml:space="preserve">
+    <value>Direct Responsible</value>
+  </data>
+  <data name="EnterpriseUnits_Parent" xml:space="preserve">
+    <value>Units Parent</value>
+  </data>
+  <data name="Error_AccessDenied_Manager" xml:space="preserve">
+    <value>You do not have access this screen , a special screen direct manager</value>
+  </data>
+  <data name="MyInfoReadOnly_Address" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="MyInfoReadOnly_AnotherPhoneNumber" xml:space="preserve">
+    <value>Another Phone Number</value>
+  </data>
+  <data name="MyInfoReadOnly_Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="MyInfoReadOnly_FirstName" xml:space="preserve">
+    <value>First Name</value>
+  </data>
+  <data name="MyInfoReadOnly_Gender" xml:space="preserve">
+    <value>GenderId</value>
+  </data>
+  <data name="MyInfoReadOnly_LastName" xml:space="preserve">
+    <value>Last Name</value>
+  </data>
+  <data name="MyInfoReadOnly_PhoneNumber" xml:space="preserve">
+    <value>PhoneNumber</value>
+  </data>
+  <data name="MyInfoReadOnly_SecondName" xml:space="preserve">
+    <value>Second Name</value>
+  </data>
+  <data name="MyInfoReadOnly_ThirdName" xml:space="preserve">
+    <value>Third Name</value>
+  </data>
+  <data name="MyInfoReadOnly_UserName" xml:space="preserve">
+    <value>UserName</value>
+  </data>
+  <data name="MyInfo_Address" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="MyInfo_AnotherPhoneNumber" xml:space="preserve">
+    <value>Another Phone Number</value>
+  </data>
+  <data name="MyInfo_FirstName" xml:space="preserve">
+    <value>First Name</value>
+  </data>
+  <data name="MyInfo_LastName" xml:space="preserve">
+    <value>Last Name</value>
+  </data>
+  <data name="MyInfo_PhoneNumber" xml:space="preserve">
+    <value>PhoneNumber</value>
+  </data>
+  <data name="MyInfo_SecondName" xml:space="preserve">
+    <value>Second Name</value>
+  </data>
+  <data name="MyInfo_ThirdName" xml:space="preserve">
+    <value>Third Name</value>
+  </data>
+  <data name="Qualification_ScientificDegreeId" xml:space="preserve">
+    <value>Scientific Degree</value>
+  </data>
+  <data name="Qualification_Specialization" xml:space="preserve">
+    <value>Specialization</value>
+  </data>
+  <data name="Qualification_University" xml:space="preserve">
+    <value>University</value>
+  </data>
+  <data name="Qualification_Year" xml:space="preserve">
+    <value>Year</value>
+  </data>
+  <data name="Course_FromDate" xml:space="preserve">
+    <value>FromDate</value>
+  </data>
+  <data name="Course_institution" xml:space="preserve">
+    <value>institution</value>
+  </data>
+  <data name="Course_Period" xml:space="preserve">
+    <value>Period</value>
+  </data>
+  <data name="Course_ToDate" xml:space="preserve">
+    <value>ToDate</value>
+  </data>
+  <data name="Course_TrainingCourse" xml:space="preserve">
+    <value>Training Course</value>
+  </data>
+  <data name="CertificatesAndAward_DateOfCertificate" xml:space="preserve">
+    <value>Date obtained</value>
+  </data>
+  <data name="CertificatesAndAward_Name" xml:space="preserve">
+    <value>Certificate Or Award Name</value>
+  </data>
+  <data name="CertificatesAndAward_Source" xml:space="preserve">
+    <value>Its source</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Logout</value>
+  </data>
+  <data name="WithoutResponsible" xml:space="preserve">
+    <value>Without Responsible</value>
+  </data>
+  <data name="User_FirstNameEn" xml:space="preserve">
+    <value>English First Name</value>
+  </data>
+  <data name="User_LastNameEn" xml:space="preserve">
+    <value>English Last Name</value>
+  </data>
+  <data name="Item_NA_No" xml:space="preserve">
+    <value>Not applicable</value>
+  </data>
+  <data name="Item_NA_Yes" xml:space="preserve">
+    <value>Applies</value>
+  </data>
+  <data name="PleaseSelectCategory" xml:space="preserve">
+    <value>Please Select Category</value>
+  </data>
+  <data name="Item_FixedWeight" xml:space="preserve">
+    <value>Fixed Weight</value>
+  </data>
+  <data name="Item_FlexWeight" xml:space="preserve">
+    <value>Flex Weight</value>
+  </data>
+  <data name="Item_IntermediateWeight" xml:space="preserve">
+    <value>Intermediate Weight</value>
+  </data>
+  <data name="Item_ShortName" xml:space="preserve">
+    <value>Short Name</value>
+  </data>
+  <data name="Standard_DisplayOrder" xml:space="preserve">
+    <value>DisplayOrder</value>
+  </data>
+  <data name="Standard_Name" xml:space="preserve">
+    <value>Standard Name</value>
+  </data>
+  <data name="Standard_Publish" xml:space="preserve">
+    <value>Publish</value>
+  </data>
+  <data name="Standard_Weight" xml:space="preserve">
+    <value>Weight</value>
+  </data>
+  <data name="ViewCategoryAndItem_CategoryName" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="ViewCategoryAndItem_ItemName" xml:space="preserve">
+    <value>Item</value>
+  </data>
+  <data name="UserUnits_Added" xml:space="preserve">
+    <value>Added</value>
+  </data>
+  <data name="UserUnits_NotAdded" xml:space="preserve">
+    <value>Not Added</value>
+  </data>
+  <data name="Common_LevelName" xml:space="preserve">
+    <value>Level Name</value>
+  </data>
+  <data name="Common_User" xml:space="preserve">
+    <value>User</value>
+  </data>
+  <data name="GeneralClose" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="GeneralOk" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="UnitUser_ConfirmModalText" xml:space="preserve">
+    <value>Already Exist in other unti</value>
+  </data>
+  <data name="UnitUser_ConfirmTitle" xml:space="preserve">
+    <value>Confirm</value>
+  </data>
+  <data name="SubIndicators_NoStandardsForThisItem" xml:space="preserve">
+    <value>no standards for this item</value>
+  </data>
+  <data name="SubIndicators_EmptyQuantity" xml:space="preserve">
+    <value>Empty</value>
+  </data>
+  <data name="SubIndicators_IsContinuous" xml:space="preserve">
+    <value>Is Continuous</value>
+  </data>
+  <data name="SubIndicators_Quantity" xml:space="preserve">
+    <value>Quantity</value>
+  </data>
+  <data name="SubIndicators_validationEditable" xml:space="preserve">
+    <value>Please fill in the quantity or select the field as continuous</value>
+  </data>
+  <data name="SubIndicators_NextItem" xml:space="preserve">
+    <value>Next Item</value>
+  </data>
+  <data name="SubIndicators_PreviousItem" xml:space="preserve">
+    <value>Previous Item</value>
+  </data>
+  <data name="SubIndicators_Header1" xml:space="preserve">
+    <value>Business activities and leadership recurrent and non-recurrent</value>
+  </data>
+  <data name="SubIndicators_RelatedCategories" xml:space="preserve">
+    <value>Related Categories</value>
+  </data>
+  <data name="SubIndicators_RelatedCategoriesEmpty" xml:space="preserve">
+    <value>no related categories for this category</value>
+  </data>
+  <data name="SubIndicators_TargetCategories" xml:space="preserve">
+    <value>Target Categories</value>
+  </data>
+  <data name="SubIndicators_Weight" xml:space="preserve">
+    <value>Weight</value>
+  </data>
+  <data name="UserCategory_Validation_IsSystemAdmin" xml:space="preserve">
+    <value>This is a category for system administrators that cannot be deleted</value>
+  </data>
+  <data name="Level0" xml:space="preserve">
+    <value>Level 0</value>
+  </data>
+  <data name="EnterpriseUnits_UnitResponsibleFullName" xml:space="preserve">
+    <value>User Responsible</value>
+  </data>
+  <data name="EnterpriseUnits_UnitUsersFullName" xml:space="preserve">
+    <value>Additive Users</value>
+  </data>
+  <data name="EnterpriseUnits_NoAdditiveUsers" xml:space="preserve">
+    <value>No Additive Users</value>
+  </data>
+  <data name="EnterpriseUnits_ViewAll" xml:space="preserve">
+    <value>Show All</value>
+  </data>
+  <data name="EnterpriseUnits_CountAdditiveUsers" xml:space="preserve">
+    <value>Count Of Additive Users</value>
+  </data>
+  <data name="EnterpriseUnits_NoResponsableUser" xml:space="preserve">
+    <value>No Responsable User </value>
+  </data>
+  <data name="UserUnits_Responsable" xml:space="preserve">
+    <value>Unit Responsable</value>
+  </data>
+  <data name="SubIndicatorsForItem" xml:space="preserve">
+    <value>Sub Indicators For Item</value>
+  </data>
+  <data name="TargetValue" xml:space="preserve">
+    <value>Tareget Value</value>
+  </data>
+  <data name="rtl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dir" xml:space="preserve">
+    <value>ltr</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="CountUsersOfLevel" xml:space="preserve">
+    <value>Count Users Of Level</value>
+  </data>
+  <data name="ItemNaForTargetCategory" xml:space="preserve">
+    <value>Item is Na For Target Category</value>
+  </data>
+  <data name="IsStanderdWeightSumGreaterItem" xml:space="preserve">
+    <value>IsStanderdWeightSumGreaterItem</value>
+  </data>
+  <data name="PleaseSelectItem" xml:space="preserve">
+    <value>Please Select Item</value>
+  </data>
+  <data name="ViewCategoryAndItemStandard_CategoryName" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="ViewCategoryAndItemStandard_ItemName" xml:space="preserve">
+    <value>Item</value>
+  </data>
+  <data name="ViewCategoryAndItemStandard_StandardName" xml:space="preserve">
+    <value>Standard</value>
+  </data>
+  <data name="Evidence_DisplayOrder" xml:space="preserve">
+    <value>Display Order</value>
+  </data>
+  <data name="Evidence_EvidenceDescription" xml:space="preserve">
+    <value>Evidence</value>
+  </data>
+  <data name="Standard_Evidences" xml:space="preserve">
+    <value>Evidences</value>
+  </data>
+</root>

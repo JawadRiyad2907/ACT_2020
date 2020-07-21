@@ -1,0 +1,107 @@
+﻿
+
+
+
+
+.form-control {
+    width: 100% !important;
+    font-size: 12px !important;
+}
+
+label {
+    font-size: 12px;
+}
+
+.table thead tr th, .table tbody tr td {
+    font-size: 12px;
+}
+
+.field-validation-error {
+    color: #f00;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid #f00;
+}
+
+select.input-validation-error {
+    border: 1px solid #f00;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: #f00;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+/***
+swal >> sweet alert
+***/
+.swal-icon--success__ring {
+    border-radius: 50% !important;
+    -webkit-border-radius: 50% !important;
+}
+
+.swal-icon {
+    border-radius: 50% !important;
+    -webkit-border-radius: 50% !important;
+}
+
+.swal-modal {
+    border-radius: 5px !important;
+}
+
+
+/*Select 2*/
+
+.select2-container .select2-choice .select2-arrow {
+    background: #eae8e8;
+    background-image: none,linear-gradient(to bottom,rgba(255,255,255,.6) 0,rgba(255,255,255,0) 100%);
+}
+
+/*boostrap*/
+.form-group {
+    margin-bottom: 9px !important;
+}
+
+    .form-group.row {
+        margin-bottom: 5px !important;
+    }
+
+.width-300 {
+    width: 300px;
+}
+.width-200 {
+    width: 200px;
+}
+.width-100 {
+    width: 100px;
+}
+.width-50 {
+    width: 50px;
+}
+
+.title-div {
+    padding: 8px;
+}
+
+.logo-default {
+    width: 81px;
+    height: 26px;
+    margin-top: 10px !important;
+}
+
+.disabled-any {
+    pointer-events: none;
+    opacity: 0.5;
+}

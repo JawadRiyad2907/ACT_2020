@@ -1,0 +1,123 @@
+﻿@model ACT.ViewModel.MyInfoReadOnlyViewModel
+
+<div class="tabbable tabbable-custom tabbable-full-width">
+    @Html.Partial("_TabsPartialView", "basic")
+    <div class="tab-content">
+        <div class="tab-pane active">
+            <div class="portlet light ">
+                <div class="portlet-title">
+                    <div class="actions btn-set">
+                        <a href="@Url.Action("Edit")" class="btn  green "><i class="fa fa-edit"></i> تعديل</a>
+                    </div>
+                </div>
+                <div class="portlet-body form">
+                    <div class="form-body">
+                       
+                        <div class="row static-info">
+                            <div class="col-md-5">
+                                <div class="row">
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3 name">@Html.DisplayNameFor(x => x.FirstName):</label>
+                                        <div class="col-md-9 value">
+
+                                            @Model.FirstName
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3 name">@Html.DisplayNameFor(x => x.SecondName):</label>
+                                        <div class="col-md-9 value">
+
+                                            @Model.SecondName
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3 name">@Html.DisplayNameFor(x => x.ThirdName):</label>
+                                        <div class="col-md-9 value">
+
+                                            @Model.ThirdName
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3 name">@Html.DisplayNameFor(x => x.LastName):</label>
+                                        <div class="col-md-9 value">
+                                            @Model.LastName
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row ">
+                                    <div class="form-group ">
+                                        <label class="control-label col-md-3 name">@Html.DisplayNameFor(x => x.Address):</label>
+                                        <div class="col-md-9 value">
+
+                                            @Model.Address
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-md-5">
+                                <div class="row">
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3 name">@Html.DisplayNameFor(x => x.PhoneNumber):</label>
+                                        <div class="col-md-9 value">
+                                                @Model.PhoneNumber
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3 name">@Html.DisplayNameFor(x => x.AnotherPhoneNumber):</label>
+                                        <div class="col-md-9 value">
+                                                @Model.AnotherPhoneNumber
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3 name">@Html.DisplayNameFor(x => x.Gender):</label>
+                                        <div class="col-md-9 value">
+                                                @Model.Gender
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3 name">@Html.DisplayNameFor(x => x.Email):</label>
+                                        <div class="col-md-9 value">
+                                           
+                                                @Model.Email
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                           
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

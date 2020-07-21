@@ -1,0 +1,46 @@
+﻿@section styles {
+    <style>
+
+        .performance-table {
+            margin-top: 25px;
+        }
+        
+    </style>
+}
+
+<div class="row">
+    <div class="col-md-5">
+        @Html.Action("UserLevelInfo", "User", new { Area = "UsersManagement" })
+        <div class="form-group row">
+            <label class="control-label col-md-3" for="SearchMyItem">@Resources.LocalizedText.Item_ShortName</label>
+            <div class="col-md-9">
+                <select id="SearchMyItem" class="form-control input-sm select2me">
+                    <option value="">@Resources.LocalizedText.DropDownnPleaseSelect</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <a id="search-btn" onclick="SearchPerformanceTable();" class="btn  yellow filter-submit margin-bottom  pull-right"><i class="fa fa-search"></i> @Resources.LocalizedText.Search</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="performance-table">
+
+</div>
+
+
+
+
+
+
+@section scripts {
+    <script src="~/Scripts/MyPerformance/index.js"></script>
+    <script>
+        var fillMyItemUrl = "@Url.Action("FillMyItem", "Item",new {Area= "SystemManagment" })";
+        var performanceTableUrl = "@Url.Action("PerformanceTable")";
+        var SearchSelectedMyItem = "1";
+    </script>
+}

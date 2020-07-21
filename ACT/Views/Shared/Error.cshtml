@@ -1,0 +1,29 @@
+﻿@{
+    if (Request.IsAjaxRequest() || ViewContext.IsChildAction)
+    {
+        Layout = null;
+    }
+    int? ErrorNumber = ViewBag.ErrorNumber;
+}
+<div class="content">
+    <div class="alert alert-dismissible alert-danger">
+        @if (ErrorNumber.HasValue)
+        {
+            switch (ErrorNumber)
+            {
+                case 547:
+                    @Resources.LocalizedText.Error_DeleteAssociated
+                    break;
+                default:
+                    @Resources.LocalizedText.Error_ProcessRequest
+                    break;
+            }
+        }
+        else
+        {
+
+            @Resources.LocalizedText.Error_ProcessRequest
+        }
+        .
+    </div>
+</div>

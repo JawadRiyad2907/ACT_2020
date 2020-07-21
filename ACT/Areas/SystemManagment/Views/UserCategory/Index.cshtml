@@ -1,0 +1,66 @@
+﻿@using ACT.ViewModel;
+@model UserCategoryViewModel
+@section Styles
+{
+    <link href="~/assets/global/plugins/jstree/dist/themes/default/style.min.css" rel="stylesheet" />
+}
+
+@Html.Partial("_SearchPartialView")
+
+<div class="portlet">
+    <div class="portlet-title">
+        <div class="actions btn-set">
+            <a href="@Url.Action("Add")" class="btn default yellow-stripe">
+                <i class="fa fa-plus"></i>
+                <span class="hidden-480">
+                    اضافة جديد
+                </span>
+            </a>
+        </div>
+    </div>
+    <div class="portlet-body">
+        <table class="table table-striped table-bordered table-hover" id="grid-object">
+            <thead>
+                <tr class="heading">
+                    <th></th>
+                    <th>
+                        @Html.DisplayNameFor(x => x.Name)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(x => x.LevelName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(x => x.DisplayOrder)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(x => x.Active)
+                    </th>
+                    <th>
+                    </th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+
+@section scripts {
+
+    <script src="~/assets/global/plugins/jstree/dist/jstree.min.js"></script>
+    <script>
+     var GridUrl = "@Url.Action("GetUserCategoryList")";
+     var DeleteUrl = "@Url.Action("Delete")";
+     var EditUrl = "@Url.Action("Edit")";
+     var EditPrivelages = "@Url.Action("Category", "Manage" ,new {Area="Privelags" })";
+     var menuPrivelageUrl = "@Url.Action("CategoryTreeReadOnly", "Manage" ,new {Area="Privelags" })";
+     var fillLevel1Url = "@Url.Action("FillLevel1","Level1",new {Area="Level" })";
+     var fillLevel2Url = "@Url.Action("FillLevel2","Level2",new {Area="Level" })";
+     var fillLevel3Url = "@Url.Action("FillLevel3","Level3",new {Area="Level" })";
+     var fillLevel4Url = "@Url.Action("FillLevel4","Level4",new {Area="Level" })";
+
+    </script>
+
+    <script src="~/Scripts/UserCategory/data-table.js"></script>
+    <script src="~/Scripts/UserCategory/Index.js"></script>
+    <script src="~/Scripts/Common/level-search.js"></script>
+    
+}

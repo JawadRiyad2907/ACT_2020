@@ -1,0 +1,70 @@
+﻿@using ACT.ViewModel;
+@model EvidenceViewModel
+@{ 
+
+    var Standard = (ViewBag.Standard as StandardViewModel);
+}
+
+
+@Html.Hidden("SearchStandardId", Standard.Id)
+<div class="row">
+    <div class="col-md-5">
+        @Html.Action("ViewCategoryAndItemAndStandard", new { StandardId = Standard.Id })
+
+        <div class="form-group row">
+            <label class="control-label col-md-3" for="SearchName">@Html.DisplayNameFor(x => x.EvidenceDescription)</label>
+            <div class="col-md-9">
+                <input class="form-control input-sm text-box single-line" id="SearchName" type="text" value="">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <a id="search-btn" onclick="SearchDataTable();" class="btn  yellow filter-submit margin-bottom  pull-right"><i class="fa fa-search"></i> بحث</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="portlet">
+    <div class="portlet-title">
+        <div class="actions btn-set">
+            <a href="@Url.Action("Index", "Standard",new { ItemId=Standard.ItemId,CategoryId=Standard.CategoryId})" class="btn default"><i class="fa fa-reply"></i> رجوع الى المعايير </a>
+            <a href="@Url.Action("Add",new { StandardId=Standard.Id})" class="btn default yellow-stripe">
+                <i class="fa fa-plus"></i>
+                <span class="hidden-480">
+                    اضافة جديد
+                </span>
+            </a>
+        </div>
+    </div>
+    <div class="portlet-body">
+        <table class="table table-striped table-bordered table-hover" id="grid-object">
+            <thead>
+                <tr class="heading">
+                    <th>
+                        @Html.DisplayNameFor(x => x.EvidenceDescription)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(x => x.DisplayOrder)
+                    </th>
+                    <th>
+                    </th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+
+
+
+
+
+
+
+@section scripts {
+    <script>
+        var GridUrl = "@Url.Action("GetEvidenceList")";
+        var DeleteUrl = "@Url.Action("Delete")";
+        var EditUrl =  "@Url.Action("Edit")";
+    </script>
+    <script src="~/Scripts/Evidence/Index.js"></script>
+}

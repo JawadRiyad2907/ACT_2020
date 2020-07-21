@@ -1,0 +1,20 @@
+﻿@model ACT.ViewModel.ViewCategoryAndItemStandardViewModel
+
+<div class="form-group row">
+    @Html.LabelFor(model => model.CategoryName, new { @class = "control-label col-md-3" })
+    <div class="col-md-9">
+        @Html.TextBoxFor(model => model.CategoryName, new { @class = "form-control input-sm", @Readonly = "" })
+    </div>
+</div>
+<div class="form-group row">
+    @Html.LabelFor(model => model.ItemName, new { @class = "control-label col-md-3" })
+    <div class="col-md-9">
+        @Html.TextBoxFor(model => model.ItemName, new { @class = "form-control input-sm", @Readonly = "" })
+    </div>
+</div>
+<div class="form-group row">
+    @Html.LabelFor(model => model.StandardName, new { @class = "control-label col-md-3" })
+    <div class="col-md-9">
+        @Html.TextBoxFor(model => model.StandardName, new { @class = "form-control input-sm", @Readonly = "" })
+    </div>
+</div>

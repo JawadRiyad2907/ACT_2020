@@ -1,0 +1,55 @@
+﻿@using ACT.ViewModel;
+@model CourseViewModel
+
+<div class="tabbable tabbable-custom tabbable-full-width">
+    @Html.Partial("_TabsPartialView", "course")
+    <div class="tab-content">
+        <div class="tab-pane active">
+            <div class="portlet">
+                <div class="portlet-title">
+                    <div class="actions btn-set">
+                        <a href="@Url.Action("Add")" class="btn default yellow-stripe">
+                            <i class="fa fa-plus"></i>
+                            <span class="hidden-480">
+                                اضافة جديد
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="portlet-body">
+                    <table class="table table-striped table-bordered table-hover" id="grid-object">
+                        <thead>
+                            <tr class="heading">
+                                <th>
+                                    @Html.DisplayNameFor(x => x.TrainingCourse)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(x => x.institution)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(x => x.Period)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(x => x.FromDate)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(x => x.ToDate)
+                                </th>
+                                <th>
+                                </th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts {
+    <script>
+        var GridUrl = "@Url.Action("GetCourseList")";
+        var DeleteUrl = "@Url.Action("Delete")";
+        var EditUrl =  "@Url.Action("Edit")";
+    </script>
+    <script src="~/Scripts/Course/Index.js"></script>
+}
