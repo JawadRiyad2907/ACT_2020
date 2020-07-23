@@ -59,6 +59,7 @@ namespace ACT.Areas.Privelags.Controllers
         {
             List<MenuPrivelagesViewModel> privelages = new List<MenuPrivelagesViewModel>();
             _privelagsService.Delete(cond => cond.CategoryId.Value == Id);
+            
             if (privelagesIds != null)
             {
 
@@ -76,6 +77,7 @@ namespace ACT.Areas.Privelags.Controllers
                 _privelagsService.AddRange(mappedEntity);
 
             }
+            
             return Json(new { data = "", success = true }, JsonRequestBehavior.AllowGet);
         }
 

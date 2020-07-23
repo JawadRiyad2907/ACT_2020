@@ -225,6 +225,7 @@
     <Compile Include="AutoMapper\AutoMapperConfiguration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="General\Json\GeneralJsonResponse.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CertificatesAndAward.cs">
       <DependentUpon>ActModel.tt</DependentUpon>
     </Compile>
@@ -4394,6 +4395,7 @@
     <Content Include="Areas\WorkPlanning\Views\AdministrativeUnits\Add.cshtml" />
     <Content Include="Areas\WorkPlanning\Views\DirectResponsible\Index.cshtml" />
     <Content Include="Areas\WorkPlanning\Views\DirectResponsible\_SearchPartialView.cshtml" />
+    <Content Include="Models\ActModel.edmx.sql" />
     <Content Include="Scripts\CertificatesAndAward\Index.js" />
     <Content Include="Scripts\Common\users-responsible-for-me.js" />
     <Content Include="Scripts\EducationalUnits\data-table.js" />

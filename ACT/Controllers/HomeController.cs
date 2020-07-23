@@ -11,6 +11,7 @@ using ACT.Utilities.Enum;
 
 namespace ACT.Controllers
 {
+
     [ActAuthorize(MenuEnum.MyInfo)]
     public class HomeController : BaseController
     {

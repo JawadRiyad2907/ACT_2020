@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'E:\My Project\ACT2019\ACT\Models\ActModel.edmx'. 
+﻿// T4 code generation is enabled for model 'D:\JawadAsp\ACT_2020\ACT\Models\ActModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

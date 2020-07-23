@@ -49,6 +49,7 @@ namespace ACT.Controllers
         {
             var list = languageService.List(filter: x => x.Published, orderBy: q => q.OrderBy(e => e.DisplayOrder));
             var menuList = Mapper.Map<List<LanguageMenuViewModel>>(list);
+           
             var CurrentLang = menuList.Where(x => x.LanguageCulture == CultureHelper.GetCurrentCulture() || x.LanguageCulture.Split('-')[0] == CultureHelper.GetCurrentCulture()).FirstOrDefault();
             menuList.Remove(CurrentLang);
             var model = new LanguageMenuBaseViewModel

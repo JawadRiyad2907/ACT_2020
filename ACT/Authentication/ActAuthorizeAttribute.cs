@@ -33,6 +33,9 @@ namespace ACT.Authentication
         protected override bool AuthorizeCore(HttpContextBase httpContext)
         {
 
+            
+
+
             if ((CurrentUser == null || (!CurrentUser.MenuIdsPermission.Contains((int)_menuEnum) && _menuEnum != MenuEnum.CommonAction)))
             {
                 _resourceMessage = LocalizedText.Error_AccessDenied;
@@ -72,6 +75,7 @@ namespace ACT.Authentication
             }
             else
             {
+                
                 routeData = new RedirectToRouteResult
                 (new System.Web.Routing.RouteValueDictionary
                  (new
@@ -81,6 +85,7 @@ namespace ACT.Authentication
                      area = "",
                  }
                  ));
+                 
             }
 
 

@@ -23,6 +23,7 @@ namespace ACT.Models
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+      
             throw new UnintentionalCodeFirstException();
         }
     

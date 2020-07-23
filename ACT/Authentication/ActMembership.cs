@@ -38,9 +38,12 @@ namespace ACT.Authentication
             }
 
             //get level manager
-            var LevelResponsibleForMe = _AllLevelService.GetBy(x => (x.DirectResponsible == user.Id) || (user.UserCategory.IsSystemAdmin == true && x.levelNumber == 0));
+            // var LevelResponsibleForMe = _AllLevelService.GetBy(x => (x.DirectResponsible == user.Id) || (user.UserCategory.IsSystemAdmin == true && x.levelNumber == 0));var LevelResponsibleForMe = _AllLevelService.GetBy(x => (x.DirectResponsible == user.Id) || (user.UserCategory.IsSystemAdmin == true && x.levelNumber == 0));
+            var LevelResponsibleForMe = _AllLevelService.GetBy(x => (x.DirectResponsible == user.Id) || ( x.levelNumber == 0));
             return new ActMembershipUser(user, LevelResponsibleForMe);
-        }
+        
+           
+            }
 
         public override string GetUserNameByEmail(string email)
         {
